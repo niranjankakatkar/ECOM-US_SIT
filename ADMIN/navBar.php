@@ -87,7 +87,7 @@
                             <div class="collapse">
                                 <ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
                                     <li class="">
-                                        <a class="sidenav-item-link" href="main-category.html">
+                                        <a class="sidenav-item-link" href="../Category">
                                             <span class="nav-text">Main Category</span>
                                         </a>
                                     </li>
