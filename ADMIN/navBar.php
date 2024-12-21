@@ -14,7 +14,7 @@
                     <ul class="nav sidebar-inner" id="sidebar-menu">
                         <!-- Dashboard -->
                         <li class="active">
-                            <a class="sidenav-item-link" href="index.html">
+                            <a class="sidenav-item-link" href="../Dashboard">
                                 <i class="mdi mdi-view-dashboard-outline"></i>
                                 <span class="nav-text">Dashboard</span>
                             </a>
@@ -92,7 +92,7 @@
                                         </a>
                                     </li>
                                     <li class="">
-                                        <a class="sidenav-item-link" href="sub-category.html">
+                                        <a class="sidenav-item-link" href="../Sub-Category">
                                             <span class="nav-text">Sub Category</span>
                                         </a>
                                     </li>
