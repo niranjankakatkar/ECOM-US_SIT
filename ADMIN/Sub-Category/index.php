@@ -4,48 +4,49 @@ include '../../niru_collection.php';
 $url_id=$_GET['id'];
 $Dflag=$_GET['Dflag'];
 if($Dflag!=""){
-	$filepath=givedata($conn,"category","id",$url_id,"filepath");
-	
-	$sql = "DELETE FROM category WHERE id='$url_id'";
+	$filepath=givedata($conn,"sub_category","id",$url_id,"filepath");
+	$sql = "DELETE FROM sub_category WHERE id='$url_id'";
 	if($conn->query($sql)){
-		  unlink($filepath);
+			  unlink($filepath);
+	
 		?>
-		<script>window.location.href="../Category/"; </script>
+		<script>window.location.href="../Sub-Category/"; </script>
 		<?php
 	}
 }
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$prep_by = "ADMIN";//$_SESSION['token'];
-	$category_title=$_POST['category_title'];
+	$category_id=$_POST['category_id'];
+	$sub_category_title=$_POST['sub_category_title'];
 	$description=$_POST['description'];
 	$flag="1";
 	$key_=generateRandomString(20);
 	
-	$image=$_FILES['category_img']['name']; 
-			 $imageArr=explode('.',$image); //first index is file name and second index file type
+	$image=$_FILES['sub_category_img']['name']; 
+				 $imageArr=explode('.',$image); //first index is file name and second index file type
 			 $rand=rand(100000,999999);
 			 $newImageName=$rand.'.'.$imageArr[1];
-			 $uploadPath="../uploads/category/".$newImageName;
-			 $isUploaded=move_uploaded_file($_FILES["category_img"]["tmp_name"],$uploadPath);
+			 $uploadPath="../uploads/subcategory/".$newImageName;
+			 $isUploaded=move_uploaded_file($_FILES["sub_category_img"]["tmp_name"],$uploadPath);
   
 	if($url_id=="")
 	{
-		$sql="INSERT INTO category(category_title,description,filepath,flag,prep_by,key_) VALUES('$category_title','$description','$uploadPath','$flag','$prep_by','$key_')";
+		$sql="INSERT INTO sub_category(category_id,sub_category_title,description,filepath,flag,prep_by,key_) VALUES('$category_id','$sub_category_title','$description','$uploadPath','$flag','$prep_by','$key_')";
 		if($conn->query($sql))
 		{
 		 
 		  ?>		  
-		 <script>alert("New Category Added"); window.location.href="../Category/"; </script>
+		 <script>alert("New Category Added"); window.location.href="../Sub-Category/"; </script>
 		  <?php
 		}
 	}else{
-		$sql="UPDATE category set category_title='$category_title',description='$description',filepath='$uploadPath',flag='$flag' where id='$url_id'";
+		$sql="UPDATE sub_category set category_id='$category_id',sub_category_title='$sub_category_title',description='$description',filepath='$uploadPath',flag='$flag' where id='$url_id'";
 		
        if($conn->query($sql))
         {
             ?>
-			    <script> window.location.href="../Category/"; </script>
+			    <script> window.location.href="../Sub-Category/"; </script>
 		    <?php
         }
 	}										
@@ -58,14 +59,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 <html lang="en" dir="ltr">
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/main-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Dec 2024 08:27:56 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/sub-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Dec 2024 08:27:58 GMT -->
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Waves Packaging - Admin Dashboard.">
+    <meta name="description" content="Waves Packaging - Admin Dashboard.">
 
-    <title>Waves Packaging - Admin Dashboard.</title>
+<title>Waves Packaging - Admin Dashboard.</title>
+
 
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -86,8 +88,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 	<!-- FAVICON -->
 	<link href="../assets/img/favicon.png" rel="shortcut icon" />
-	<script src="../assets/js/sweetalert2@11"></script>
-
 </head>
 
 <body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-dark ec-header-light" id="body">
@@ -96,36 +96,35 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	<div class="wrapper">
 
 		<!-- LEFT MAIN SIDEBAR -->
-	   <!-- LEFT MAIN SIDEBAR -->
         <?php include '../navBar.php'?>
 
-        <!--  PAGE WRAPPER -->
-        <div class="ec-page-wrapper">
+<!--  PAGE WRAPPER -->
+<div class="ec-page-wrapper">
 
-            <!-- Header -->
-            <?php include '../header.php'?>
+    <!-- Header -->
+    <?php include '../header.php'?>
 
 			<!-- CONTENT WRAPPER -->
 			<div class="ec-content-wrapper">
 				<div class="content">
 					<div class="breadcrumb-wrapper breadcrumb-wrapper-2 breadcrumb-contacts">
-							<h1>Main Category</h1>
-							<p class="breadcrumbs"><span><a href="../Dashboard">Home</a></span>
-								<span><i class="mdi mdi-chevron-right"></i></span>Main Category</p>
+						<h1>Sub Category</h1>
+						<p class="breadcrumbs"><span><a href="index.html">Home</a></span>
+							<span><i class="mdi mdi-chevron-right"></i></span>Sub Category</p>
 					</div>
 					<div class="row">
 						<div class="col-xl-4 col-lg-12">
 							<div class="ec-cat-list card card-default mb-24px">
 								<div class="card-body">
 									<div class="ec-cat-form">
-										<h4>Add New Category</h4>
+										<h4>Add Sub Category</h4>
 
-										<form  method="POST" class="form" enctype="multipart/form-data">
-                                  
+										<form  class="form" enctype="multipart/form-data"  method="POST">
+
 											<div class="form-group row">
 												<label for="text" class="col-12 col-form-label">Name</label> 
 												<div class="col-12">
-													<input  name="category_title" id="category_title" value="<?=givedata($conn,"category","id",$url_id,"category_title");?>" class="form-control here slug-title" type="text" required >
+													<input name="sub_category_title" id="sub_category_title" value="<?=givedata($conn,"sub_category","id",$url_id,"sub_category_title");?>"  class="form-control here slug-title" type="text">
 												</div>
 											</div>
 
@@ -140,9 +139,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 											<div class="form-group row">
 												<label class="col-12 col-form-label">Sort Description</label> 
 												<div class="col-12">
-													<textarea id="description" name="description" cols="40" rows="2" class="form-control"></textarea>
+													<textarea  name="description" id="description" value="<?=givedata($conn,"sub_category","id",$url_id,"description");?>" cols="40" rows="2" class="form-control"></textarea>
 												</div>
 											</div> 
+
+											<div class="form-group row">
+												<label for="parent-category" class="col-12 col-form-label">Parent Category</label> 
+												<div class="col-12">
+													<select id="category_id" name="category_id" class="custom-select">
+													<option value="">----Select----- </option>
+													<?php
+												   $sql = "SELECT * FROM category where flag='1'";
+												   $result = mysqli_query($conn, $sql);
+												   while($row = mysqli_fetch_assoc($result)) {
+												?>
+                                                <option value="<?=$row['id']?>"><?=$row['category_title']?></option>
+												   <?php } ?>
+													</select>
+												</div>
+											</div>
 
 											<div class="form-group row">
 												<label class="col-12 col-form-label">Full Description</label> 
@@ -152,9 +167,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 											</div> 
 
 											<div class="form-group row">
-												<label class="col-12 col-form-label">Image <span>( JPEG/PNG )</span></label>
+											<label class="col-12 col-form-label">Image <span>( JPEG/PNG )</span></label>
 												<div class="col-12">
-													<input type="file" class="form-control" id="category_img" name="category_img" accept="image/png, image/jpeg" placeholder="" required>
+													<input type="file" class="form-control" id="sub_category_img" name="sub_category_img" accept="image/png, image/jpeg" placeholder="" required>
 												</div>
 											</div>
 
@@ -179,7 +194,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 												<tr>
 													<th>Thumb</th>
 													<th>Name</th>
-													<th>Sub Categories</th>
+													<th>Main Categories</th>
 													<th>Product</th>
 													<th>Total Sell</th>
 													<th>Status</th>
@@ -188,26 +203,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 											</thead>
 
 											<tbody>
+
 											<?php
-										   $sql = "SELECT * FROM category";
+										   $sql = "SELECT * FROM sub_category";
 										   $result = mysqli_query($conn, $sql);
 										   
 									   
 											   while($row = mysqli_fetch_assoc($result)) {
 												   $timepstamp=$row['timestamp'];
 													$timepstamp=date_create("".$timepstamp);
-			  								 ?>
+			   ?>
 												<tr>
-													<td><img class="cat-thumb" src="<?=$row['filepath']?>" alt="Category Image" /></td>
-													<td><?=$row['category_title']?></td>
+													<td><img class="cat-thumb" src="<?=$row['filepath']?>" alt="product image"/></td>
+													<td><?=$row['sub_category_title']?></td>
 													<td>
 														<span class="ec-sub-cat-list">
-														<span class="ec-sub-cat-count" title="Total Sub Categories">5</span>
-														
+															<span class="ec-sub-cat-tag"><?=givedata($conn,"category","id",$row['category_id'],"category_title");?></span>
 														</span>
 													</td>
-													<td>28</td>
-													<td>2161</td>
+													<td>0</td>
+													<td>0</td>
 													<td><?php
 														if($row['flag']==1){
 													?>
@@ -231,7 +246,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 															</button>
 
 															<div class="dropdown-menu">
-																<a class="dropdown-item" href="?id=<?=$row['id']?>">Edit</a>
+															<a class="dropdown-item" href="?id=<?=$row['id']?>">Edit</a>
 																<a class="dropdown-item" href="?id=<?=$row['id']?>&Dflag=1">Delete</a>
 															</div>
 														</div>
@@ -241,8 +256,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 												<?php
 											   }
 											   ?>
-												
-											</tbody>
+											   </tbody>
 										</table>
 									</div>
 								</div>
@@ -252,22 +266,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
 
-			
+			<!-- Footer -->
 			<footer class="footer mt-auto">
-                <div class="copyright bg-white">
+				<div class="copyright bg-white">
 				<p>
                         Copyright &copy; <span id="ec-year"></span><a class="text-primary"
                             href="#" target="_blank"> Waves Packaging Dashboard</a>. All Rights Reserved.
                     </p>
-                </div>
-            </footer>
+				</div>
+			</footer>
 
+		</div> <!-- End Page Wrapper -->
 
-		</div>
+	</div> <!-- End Wrapper -->
 
-	</div>
-
-	
+	<!-- Common Javascript -->
 	<script src="../assets/plugins/jquery/jquery-3.5.1.min.js"></script>
 	<script src="../assets/js/bootstrap.bundle.min.js"></script>
 	<script src="../assets/plugins/tags-input/bootstrap-tagsinput.js"></script>
@@ -275,15 +288,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	<script src="../assets/plugins/jquery-zoom/jquery.zoom.min.js"></script>
 	<script src="../assets/plugins/slick/slick.min.js"></script>
 
-	
+	<!-- Data Tables -->
 	<script src='../assets/plugins/data-tables/jquery.datatables.min.js'></script>
 	<script src='../assets/plugins/data-tables/datatables.bootstrap5.min.js'></script>
 	<script src='../assets/plugins/data-tables/datatables.responsive.min.js'></script>
 
-
+	<!-- Option Switcher -->
 	<script src="../assets/plugins/options-sidebar/optionswitcher.js"></script>
 
+	<!-- Ekka Custom -->
 	<script src="../assets/js/ekka.js"></script>
 </body>
 
+<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/sub-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Dec 2024 08:27:58 GMT -->
 </html>

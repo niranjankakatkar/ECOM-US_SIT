@@ -10,7 +10,7 @@
     <meta name="description" content="Waves Packging - Shaping Your Sustainable Future">
     <meta name="keywords" content="Waves Packging">
     <meta name="author" content="Waves Packging">
-    <link rel="icon" href="assets/images/logo/1.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/images/logo/1.ico" type="image/x-icon">
     <title>Waves Packaging</title>
 
     <!-- Google font -->
@@ -24,18 +24,18 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap">
 
     <!-- bootstrap css -->
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
 
     <!-- wow css -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/animate.min.css">
 
     <!-- Iconly css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bulk-style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/animate.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bulk-style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
    
 
     <!-- Template css -->
-    <link id="color-link" rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link id="color-link" rel="stylesheet" type="text/css" href="../assets/css/style.css">
     
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -131,8 +131,8 @@
                                     <i class="fa-solid fa-bars"></i>
                                 </span>
                             </button>
-                            <a href="index.php" class="web-logo nav-logo">
-                                <img src="assets/images/logo/Waves Logo Jpg.jpg" class="img-fluid blur-up lazyload "  alt="" style="height: 100px;">
+                            <a href="../" class="web-logo nav-logo">
+                                <img src="../assets/images/logo/Waves Logo Jpg.jpg" class="img-fluid blur-up lazyload "  alt="" style="height: 100px;">
                             </a>
 
                             <div class="middle-box">
@@ -200,7 +200,7 @@
                                                     <li class="product-box-contain">
                                                         <div class="drop-cart">
                                                             <a href="product-left-thumbnail.html" class="drop-image">
-                                                                <img src="assets/images/vegetable/product/1.png"
+                                                                <img src="../assets/images/vegetable/product/1.png"
                                                                     class="blur-up lazyload" alt="">
                                                             </a>
 
@@ -219,7 +219,7 @@
                                                     <li class="product-box-contain">
                                                         <div class="drop-cart">
                                                             <a href="product-left-thumbnail.html" class="drop-image">
-                                                                <img src="assets/images/vegetable/product/2.png"
+                                                                <img src="../assets/images/vegetable/product/2.png"
                                                                     class="blur-up lazyload" alt="">
                                                             </a>
 

@@ -7,7 +7,7 @@
                     <div class="service-contain">
                         <div class="service-box">
                             <div class="service-image">
-                                <img src="https://themes.pixelstrap.com/fastkart/assets/svg/product.svg" class="blur-up lazyload" alt="">
+                                <img src="https://themes.pixelstrap.com/fastkart/../assets/svg/product.svg" class="blur-up lazyload" alt="">
                             </div>
 
                             <div class="service-detail">
@@ -17,7 +17,7 @@
 
                         <div class="service-box">
                             <div class="service-image">
-                                <img src="https://themes.pixelstrap.com/fastkart/assets/svg/delivery.svg" class="blur-up lazyload" alt="">
+                                <img src="https://themes.pixelstrap.com/fastkart/../assets/svg/delivery.svg" class="blur-up lazyload" alt="">
                             </div>
 
                             <div class="service-detail">
@@ -27,7 +27,7 @@
 
                         <div class="service-box">
                             <div class="service-image">
-                                <img src="https://themes.pixelstrap.com/fastkart/assets/svg/discount.svg" class="blur-up lazyload" alt="">
+                                <img src="https://themes.pixelstrap.com/fastkart/../assets/svg/discount.svg" class="blur-up lazyload" alt="">
                             </div>
 
                             <div class="service-detail">
@@ -37,7 +37,7 @@
 
                         <div class="service-box">
                             <div class="service-image">
-                                <img src="https://themes.pixelstrap.com/fastkart/assets/svg/market.svg" class="blur-up lazyload" alt="">
+                                <img src="https://themes.pixelstrap.com/fastkart/../assets/svg/market.svg" class="blur-up lazyload" alt="">
                             </div>
 
                             <div class="service-detail">
@@ -54,8 +54,8 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="footer-logo">
                         <div class="theme-logo">
-                            <a href="index.php">
-                                <img src="assets/images/logo/Waves Logo Jpg.jpg" class="blur-up lazyload" alt="">
+                            <a href="../">
+                                <img src="../assets/images/logo/Waves Logo Jpg.jpg" class="blur-up lazyload" alt="">
                             </a>
                         </div>
 
@@ -113,7 +113,7 @@
                     <div class="footer-contain">
                         <ul>
                             <li>
-                                <a href="index.php" class="text-content">Home</a>
+                                <a href="/" class="text-content">Home</a>
                             </li>
                            
                             <li>
@@ -190,13 +190,13 @@
                                 <ul>
                                     <li class="mb-0">
                                         <a href="https://play.google.com/store/apps" target="_blank">
-                                            <img src="https://themes.pixelstrap.com/fastkart/assets/images/playstore.svg" class="blur-up lazyload"
+                                            <img src="https://themes.pixelstrap.com/fastkart/../assets/images/playstore.svg" class="blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
                                     <li class="mb-0">
                                         <a href="https://www.apple.com/in/app-store/" target="_blank">
-                                            <img src="https://themes.pixelstrap.com/fastkart/assets/images/appstore.svg" class="blur-up lazyload"
+                                            <img src="https://themes.pixelstrap.com/fastkart/../assets/images/appstore.svg" class="blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
@@ -263,7 +263,7 @@
                 <div class="row g-sm-4 g-2">
                     <div class="col-lg-6">
                         <div class="slider-image">
-                            <img src="assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload"
+                            <img src="../assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload"
                                 alt="">
                         </div>
                     </div>
@@ -458,7 +458,7 @@
 <div class="cookie-bar-box">
     <div class="cookie-box">
         <div class="cookie-image">
-            <img src="assets/images/cookie-bar.png" class="blur-up lazyload" alt="">
+            <img src="../assets/images/cookie-bar.png" class="blur-up lazyload" alt="">
             <h2>Cookies!</h2>
         </div>
 
@@ -493,7 +493,7 @@
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="assets/images/vegetable/product/10.png" class="blur-up lazyload"
+                                    <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
                                         alt="">
                                 </a>
 
@@ -507,7 +507,7 @@
                         <li class="list-2">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="assets/images/vegetable/product/11.png" class="blur-up lazyload"
+                                    <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
                                         alt="">
                                 </a>
 
@@ -521,7 +521,7 @@
                         <li class="list-3">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="assets/images/vegetable/product/12.png" class="blur-up lazyload"
+                                    <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
                                         alt="">
                                 </a>
 
@@ -535,7 +535,7 @@
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="assets/images/vegetable/product/13.png" class="blur-up lazyload"
+                                    <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
                                         alt="">
                                 </a>
 
@@ -570,46 +570,46 @@
 <!-- Bg overlay End -->
 
 <!-- latest jquery-->
-<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="../assets/js/jquery-3.6.0.min.js"></script>
 
 <!-- jquery ui-->
-<script src="assets/js/jquery-ui.min.js"></script>
+<script src="../assets/js/jquery-ui.min.js"></script>
 
 <!-- Bootstrap js-->
-<script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
-<script src="assets/js/bootstrap/popper.min.js"></script>
+<script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/bootstrap/bootstrap-notify.min.js"></script>
+<script src="../assets/js/bootstrap/popper.min.js"></script>
 
 <!-- feather icon js-->
-<script src="assets/js/feather/feather.min.js"></script>
-<script src="assets/js/feather/feather-icon.js"></script>
+<script src="../assets/js/feather/feather.min.js"></script>
+<script src="../assets/js/feather/feather-icon.js"></script>
 
 <!-- Lazyload Js -->
-<script src="assets/js/lazysizes.min.js"></script>
+<script src="../assets/js/lazysizes.min.js"></script>
 
 <!-- Slick js-->
-<script src="assets/js/slick/slick.js"></script>
-<script src="assets/js/slick/slick-animation.min.js"></script>
-<script src="assets/js/slick/custom_slick.js"></script>
+<script src="../assets/js/slick/slick.js"></script>
+<script src="../assets/js/slick/slick-animation.min.js"></script>
+<script src="../assets/js/slick/custom_slick.js"></script>
 
 <!-- Auto Height Js -->
-<script src="assets/js/auto-height.js"></script>
+<script src="../assets/js/auto-height.js"></script>
 
 <!-- Timer Js -->
-<script src="assets/js/timer1.js"></script>
+<script src="../assets/js/timer1.js"></script>
 
 <!-- Fly Cart Js -->
-<script src="assets/js/fly-cart.js"></script>
+<script src="../assets/js/fly-cart.js"></script>
 
 <!-- Quantity js -->
-<script src="assets/js/quantity-2.js"></script>
+<script src="../assets/js/quantity-2.js"></script>
 
 <!-- WOW js -->
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/custom-wow.js"></script>
+<script src="../assets/js/wow.min.js"></script>
+<script src="../assets/js/custom-wow.js"></script>
 
 <!-- script js -->
-<script src="assets/js/script.js"></script>
+<script src="../assets/js/script.js"></script>
 
 <!-- theme setting js -->
-<script src="assets/js/theme-setting.js"></script>
+<script src="../assets/js/theme-setting.js"></script>

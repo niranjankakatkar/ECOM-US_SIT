@@ -21057,7 +21057,7 @@ div.copied {
 .ec-brand {
   position: relative;
   display: block;
-  background-color: transparent;
+  background-color: #ffffff;
 }
 .ec-brand a {
   display: -webkit-box;
@@ -21090,7 +21090,7 @@ div.copied {
   }
 }
 .ec-brand a img {
-  max-width: 30px;
+  max-width: 80%;
   vertical-align: middle;
 }
 .ec-brand .ec-brand-name {
