@@ -98,7 +98,7 @@
       background-color: #fff; 
       color: black; 
       font-size: 16px; 
-      font-weight: bold; 
+      /* font-weight: 200px;  */
       /* text-transform: uppercase;  */
       border: none; 
       border-radius: 5px; 
@@ -251,32 +251,52 @@
                                         </div>
                                     </li>
                                     <li class="right-side onhover-dropdown">
-                                        <div class="delivery-login-box">
-                                            <div class="delivery-icon">
-                                                <i data-feather="user"></i>
-                                            </div>
-                                            <div class="delivery-detail">
-                                                <h6>Hello,</h6>
-                                                <h5>My Account</h5>
-                                            </div>
-                                        </div>
+                                        <?php
+                                        
+                                            if($_SESSION['tokenID']==""){
+                                                ?>
+                                                <div class="delivery-login-box">
+                                                    <div class="delivery-icon">
+                                                    <a href="SIGN-IN/"><i data-feather="user"></i></a>  
+                                                    </div>
+                                                    <div class="delivery-detail">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <?php
 
-                                        <div class="onhover-div onhover-div-login">
-                                            <ul class="user-box-name">
-                                                <li class="product-box-contain">
-                                                    <i></i>
-                                                    <a href="login.html">Log In</a>
-                                                </li>
+                                            }else{
+                                                ?>
+                                                     <div class="delivery-login-box">
+                                                        <div class="delivery-icon">
+                                                            <i data-feather="user"></i>
+                                                        </div>
+                                                        <div class="delivery-detail">
+                                                            <h6>Hello,</h6>
+                                                            <h5>My Account</h5>
+                                                        </div>
+                                                    </div>
 
-                                                <li class="product-box-contain">
-                                                    <a href="sign-up.html">Register</a>
-                                                </li>
+                                                    <div class="onhover-div onhover-div-login">
+                                                        <ul class="user-box-name">
+                                                            <li class="product-box-contain">
+                                                                <i></i>
+                                                                <a href="login.html">Log In</a>
+                                                            </li>
 
-                                                <li class="product-box-contain">
-                                                    <a href="forgot.html">Forgot Password</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                                            <li class="product-box-contain">
+                                                                <a href="sign-up.html">Register</a>
+                                                            </li>
+
+                                                            <li class="product-box-contain">
+                                                                <a href="forgot.html">Forgot Password</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                <?php
+                                            }
+                                        ?>
+                                       
                                     </li>
                                 </ul>
                             </div>
@@ -286,10 +306,10 @@
             </div>
         </div>
 
-        <div class="container-fluid-lg">
+        <div class="container-fluid-lg" style="border-bottom: 1px solid black;">
             <div class="row">
                 <div class="col-12 position-relative">
-                    <div class="main-nav nav-left-align">
+                    <div class="main-nav nav-left-align pt-0">
                         <div class="main-nav navbar navbar-expand-xl navbar-light navbar-sticky p-0">
                             <div class="offcanvas offcanvas-collapse order-xl-2" id="primaryMenu">
                                 <div class="offcanvas-header navbar-shadow">

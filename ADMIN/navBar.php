@@ -1,13 +1,12 @@
 <?php
 session_start();
-echo "--------------------------------------------------".$_SESSION['loginID'];
 if($_SESSION['loginID']=="")
 {
     ?>
 
      
         <script> 
-            window.location.href="../"; 
+            //window.location.href="../"; 
             </script>
             
               <?php

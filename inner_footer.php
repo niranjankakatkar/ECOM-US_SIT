@@ -1,6 +1,6 @@
  <!-- Footer Section Start -->
  <footer class="section-t-space" >
-    <div class="container-fluid-lg" style="background-color: #4a5568;">
+    <div class="container-fluid-lg">
         <!-- <div class="service-section">
             <div class="row g-3">
                 <div class="col-12">
@@ -54,7 +54,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="footer-logo">
                         <div class="theme-logo">
-                            <a href="../">
+                            <a href="index.php">
                                 <img src="../assets/images/logo/Waves Logo Jpg.jpg" class="blur-up lazyload" alt="">
                             </a>
                         </div>
@@ -113,7 +113,7 @@
                     <div class="footer-contain">
                         <ul>
                             <li>
-                                <a href="/" class="text-content">Home</a>
+                                <a href="index.php" class="text-content">Home</a>
                             </li>
                            
                             <li>
@@ -213,7 +213,7 @@
                 <h6 class="text-content">©2024 Waves Packaging All rights reserved</h6>
             </div>
 
-            <div class="payment" style="font-size: 2.5rem; color: white; ">
+            <div class="payment" style="font-size: 2.5rem;">
             
             <i class="fa-brands fa-cc-apple-pay"></i>
             <i class="fa-brands fa-google-pay"></i>
@@ -225,22 +225,22 @@
                 <ul>
                     <li>
                         <a href="https://www.facebook.com/" target="_blank">
-                            <i class="fa-brands fa-facebook-f" style="color: White"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
                         </a>
                     </li>
                     <li>
                         <a href="https://twitter.com/" target="_blank">
-                            <i class="fa-brands fa-twitter" style="color: White" ></i>
+                            <i class="fa-brands fa-twitter" ></i>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.instagram.com/" target="_blank">
-                            <i class="fa-brands fa-instagram" style="color: White"></i>
+                            <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
                     <li>
                         <a href="https://in.pinterest.com/" target="_blank">
-                            <i class="fa-brands fa-pinterest-p" style="color: White"></i>
+                            <i class="fa-brands fa-pinterest-p"></i>
                         </a>
                     </li>
                 </ul>
