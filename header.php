@@ -273,7 +273,7 @@
                                                         </div>
                                                         <div class="delivery-detail">
                                                             <h6>Hello,</h6>
-                                                            <h5>My Account</h5>
+                                                            <h5><?=givedata($conn,"user_master","token_key",$_SESSION['tokenID'],"full_name")?></h5>
                                                         </div>
                                                     </div>
 
@@ -281,15 +281,13 @@
                                                         <ul class="user-box-name">
                                                             <li class="product-box-contain">
                                                                 <i></i>
-                                                                <a href="login.html">Log In</a>
+                                                                <a href="#">Profile</a>
                                                             </li>
-
-                                                            <li class="product-box-contain">
-                                                                <a href="sign-up.html">Register</a>
+                                                             <li class="product-box-contain">
+                                                                <a href="#">Orders</a>
                                                             </li>
-
                                                             <li class="product-box-contain">
-                                                                <a href="forgot.html">Forgot Password</a>
+                                                                <a href="SIGN-OUT/">Logout</a>
                                                             </li>
                                                         </ul>
                                                     </div>

@@ -3,6 +3,7 @@
 include '../niru_collection.php';
 
 
+   
 echo "__AJAX-";
 
 	$full_name = $_POST['full_name'];
@@ -26,5 +27,6 @@ echo "__AJAX-";
 		echo "error";
 	}										
 			
+
 
 ?> 

@@ -1,4 +1,12 @@
-<?php include '../niru_collection.php';?> 
+<?php include '../niru_collection.php';
+
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+	
+	
+}
+
+?> 
 <?php include '../inner_header.php';?> 
 
     <!-- mobile fix menu start -->
@@ -84,20 +92,23 @@
                         </div>
 
                         <div class="input-box">
-                            <form class="row g-4">
+                            <form class="row g-4" id="formId">
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating log-in-form">
-                                        <input type="email" class="form-control" id="email" placeholder="Email Address">
+                                        <input type="email" class="form-control" id="email" name="username" placeholder="Email Address">
                                         <label for="email">Email Address</label>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating log-in-form">
-                                        <input type="password" class="form-control" id="password"
+                                        <input type="password" class="form-control" id="password" name="password"
                                             placeholder="Password">
                                         <label for="password">Password</label>
                                     </div>
+                                </div>
+                                <div class="col-12" id="login_responce">
+                                   
                                 </div>
 
                                 <div class="col-12">
@@ -112,7 +123,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <button class="btn btn-animation w-100 justify-content-center" type="submit">Log
+                                    <button class="btn btn-animation w-100 justify-content-center" id="submitButton" type="submit">Log
                                         In</button>
                                 </div>
                             </form>
@@ -151,6 +162,48 @@
 
     <!-- Footer Section Start -->
     <?php include '../inner_footer.php';?> 
+
+    <script>
+         $(document).ready(function () {
+            $("#submitButton").click(function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                let form = $("#formId");
+                let url = "signin_form.php";
+
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: form.serialize(), // Serialize form data
+                    success: function (data) {
+                        console.log('my message' + data);
+                        let mydata =  data.split("__AJAX-");
+                        var word = ""+mydata[1];
+                       let ans = ""+word.localeCompare("Done ");
+                       let ans_ = ""+word.localeCompare("Done-1 ");
+                        if (ans == 0) {
+
+                            document.getElementById("login_responce").innerHTML = "<span style='color:green'>Login Done</span>";
+                            window.location.href = '../';
+
+                          
+
+                        }else if(ans_ == 0){
+                            document.getElementById("login_responce").innerHTML = "<span style='color:orange'>Account is not activated</span>";
+
+                        }else{
+                            document.getElementById("login_responce").innerHTML = "<span style='color:red'>Entered credentials are invalid</span>";
+
+                        }
+                    },
+                    error: function (data) {
+                        alert("Error occurred while submitting the form");
+                    }
+                });
+            });
+        });
+
+    </script>
 </body>
 
 
