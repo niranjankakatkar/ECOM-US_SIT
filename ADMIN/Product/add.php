@@ -19,8 +19,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	$shop_qty=$_POST['shop_qty'];
 	$color=$_POST['color'];
 	$dimensions=$_POST['dimensions'];
-	$category_id=$_POST['category_id'];
+	
 	$sub_category_id=$_POST['sub_category_id'];
+	$category_id=givedata($conn,"sub_category","id", $sub_category_id,"category_id");
 	$flag="1";
 	$key_=generateRandomString(20);
 	/*
@@ -369,10 +370,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 			<!-- Footer -->
 			<footer class="footer mt-auto">
 				<div class="copyright bg-white">
-					<p>
-						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> Ekka Admin Dashboard</a>. All Rights Reserved.
-					  </p>
+				<p>
+                        Copyright &copy; <span id="ec-year"></span><a class="text-primary"
+                            href="#" target="_blank"> Waves Packaging Dashboard</a>. All Rights Reserved.
+                    </p>
 				</div>
 			</footer>
 

@@ -1,4 +1,6 @@
-<?php include 'header.php';?> 
+<?php  include '../niru_collection.php';
+
+include '../inner_header.php';?> 
 
 
     <!-- Breadcrumb Section Start -->
@@ -11,7 +13,7 @@
                         <nav>
                             <ol class="breadcrumb mb-0">
                                 <li class="breadcrumb-item">
-                                    <a href="index.html">
+                                    <a href="../">
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
@@ -34,7 +36,7 @@
                         <div class="col-6">
                             <div class="fresh-image-2">
                                 <div>
-                                    <img src="assets/images/inner-page/about-us/1.jpg"
+                                    <img src="../assets/images/inner-page/about-us/1.jpg"
                                         class="bg-img blur-up lazyload" alt="">
                                 </div>
                             </div>
@@ -43,7 +45,7 @@
                         <div class="col-6">
                             <div class="fresh-image">
                                 <div>
-                                    <img src="assets/images/inner-page/about-us/2.jpg"
+                                    <img src="../assets/images/inner-page/about-us/2.jpg"
                                         class="bg-img blur-up lazyload" alt="">
                                 </div>
                             </div>
@@ -193,7 +195,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                         <div>
                             <div class="team-box">
                                 <div class="team-image">
-                                    <img src="assets/images/inner-page/user/1.jpg" class="img-fluid blur-up lazyload"
+                                    <img src="../assets/images/inner-page/user/1.jpg" class="img-fluid blur-up lazyload"
                                         alt="">
                                 </div>
 
@@ -233,7 +235,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                         <div>
                             <div class="team-box">
                                 <div class="team-image">
-                                    <img src="assets/images/inner-page/user/2.jpg" class="img-fluid blur-up lazyload"
+                                    <img src="../assets/images/inner-page/user/2.jpg" class="img-fluid blur-up lazyload"
                                         alt="">
                                 </div>
 
@@ -273,7 +275,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                         <div>
                             <div class="team-box">
                                 <div class="team-image">
-                                    <img src="assets/images/inner-page/user/3.jpg" class="img-fluid blur-up lazyload"
+                                    <img src="../assets/images/inner-page/user/3.jpg" class="img-fluid blur-up lazyload"
                                         alt="">
                                 </div>
 
@@ -313,7 +315,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                         <div>
                             <div class="team-box">
                                 <div class="team-image">
-                                    <img src="assets/images/inner-page/user/4.jpg" class="img-fluid blur-up lazyload"
+                                    <img src="../assets/images/inner-page/user/4.jpg" class="img-fluid blur-up lazyload"
                                         alt="">
                                 </div>
 
@@ -353,7 +355,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                         <div>
                             <div class="team-box">
                                 <div class="team-image">
-                                    <img src="assets/images/inner-page/user/1.jpg" class="img-fluid blur-up lazyload"
+                                    <img src="../assets/images/inner-page/user/1.jpg" class="img-fluid blur-up lazyload"
                                         alt="">
                                 </div>
 
@@ -437,7 +439,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
 
                                 <div class="reviewer-profile">
                                     <div class="reviewer-image">
-                                        <img src="assets/images/inner-page/user/1.jpg" class="blur-up lazyload"
+                                        <img src="../assets/images/inner-page/user/1.jpg" class="blur-up lazyload"
                                             alt="">
                                     </div>
 
@@ -479,7 +481,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                     organic search and content marketing."</p>
                                 <div class="reviewer-profile">
                                     <div class="reviewer-image">
-                                        <img src="assets/images/inner-page/user/2.jpg" class="blur-up lazyload"
+                                        <img src="../assets/images/inner-page/user/2.jpg" class="blur-up lazyload"
                                             alt="">
                                     </div>
 
@@ -521,7 +523,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                     Company. When it comes to content marketing."</p>
                                 <div class="reviewer-profile">
                                     <div class="reviewer-image">
-                                        <img src="assets/images/inner-page/user/3.jpg" class="blur-up lazyload"
+                                        <img src="../assets/images/inner-page/user/3.jpg" class="blur-up lazyload"
                                             alt="">
                                     </div>
 
@@ -563,7 +565,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                     brand."</p>
                                 <div class="reviewer-profile">
                                     <div class="reviewer-image">
-                                        <img src="assets/images/inner-page/user/4.jpg" class="blur-up lazyload"
+                                        <img src="../assets/images/inner-page/user/4.jpg" class="blur-up lazyload"
                                             alt="">
                                     </div>
 
@@ -605,7 +607,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                     customers is incredible."</p>
                                 <div class="reviewer-profile">
                                     <div class="reviewer-image">
-                                        <img src="assets/images/inner-page/user/1.jpg" class="blur-up lazyload"
+                                        <img src="../assets/images/inner-page/user/1.jpg" class="blur-up lazyload"
                                             alt="">
                                     </div>
 
@@ -648,7 +650,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
 
                                 <div class="reviewer-profile">
                                     <div class="reviewer-image">
-                                        <img src="assets/images/inner-page/user/2.jpg" class="blur-up lazyload"
+                                        <img src="../assets/images/inner-page/user/2.jpg" class="blur-up lazyload"
                                             alt="">
                                     </div>
 
@@ -690,7 +692,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                     the Olympics!"</p>
                                 <div class="reviewer-profile">
                                     <div class="reviewer-image">
-                                        <img src="assets/images/inner-page/user/3.jpg" class="blur-up lazyload"
+                                        <img src="../assets/images/inner-page/user/3.jpg" class="blur-up lazyload"
                                             alt="">
                                     </div>
 
@@ -732,7 +734,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                     them Knicks? What kind of a father would I be if I said no?."</p>
                                 <div class="reviewer-profile">
                                     <div class="reviewer-image">
-                                        <img src="assets/images/inner-page/user/4.jpg" class="blur-up lazyload"
+                                        <img src="../assets/images/inner-page/user/4.jpg" class="blur-up lazyload"
                                             alt="">
                                     </div>
 
@@ -765,7 +767,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                 <div class="blog-box-image">
                                     <div class="blog-image">
                                         <a href="blog-detail.html" class="rounded-3">
-                                            <img src="assets/images/veg-2/blog/1.jpg" class="bg-img blur-up lazyload"
+                                            <img src="../assets/images/veg-2/blog/1.jpg" class="bg-img blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </div>
@@ -783,7 +785,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                 <div class="blog-box-image">
                                     <div class="blog-image">
                                         <a href="blog-detail.html" class="rounded-3">
-                                            <img src="assets/images/veg-2/blog/2.jpg" class="bg-img blur-up lazyload"
+                                            <img src="../assets/images/veg-2/blog/2.jpg" class="bg-img blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </div>
@@ -801,7 +803,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                 <div class="blog-box-image">
                                     <div class="blog-image">
                                         <a href="blog-detail.html" class="rounded-3">
-                                            <img src="assets/images/veg-2/blog/3.jpg" class="bg-img blur-up lazyload"
+                                            <img src="../assets/images/veg-2/blog/3.jpg" class="bg-img blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </div>
@@ -819,7 +821,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                                 <div class="blog-box-image">
                                     <div class="blog-image">
                                         <a href="blog-detail.html" class="rounded-3">
-                                            <img src="assets/images/veg-2/blog/4.jpg" class="bg-img blur-up lazyload"
+                                            <img src="../assets/images/veg-2/blog/4.jpg" class="bg-img blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </div>
@@ -836,7 +838,7 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
                             <div class="blog-box">
                                 <div class="blog-image">
                                     <a href="blog-detail.html" class="rounded-3">
-                                        <img src="assets/images/veg-2/blog/5.jpg" class="bg-img blur-up lazyload"
+                                        <img src="../assets/images/veg-2/blog/5.jpg" class="bg-img blur-up lazyload"
                                             alt="">
                                     </a>
                                 </div>
@@ -854,4 +856,4 @@ Our objective is to make eco-friendly packaging affordable and accessible to all
     </section> -->
     <!-- Blog Section End -->
 
-    <?php include 'footer.php';?> 
+    <?php include '../inner_footer.php';?> 

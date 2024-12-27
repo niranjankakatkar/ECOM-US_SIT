@@ -144,12 +144,12 @@ if($_SESSION['loginID']=="")
                             <div class="collapse">
                                 <ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
                                     <li class="">
-                                        <a class="sidenav-item-link" href="#">
+                                        <a class="sidenav-item-link" href="../ORDERS/new.php">
                                             <span class="nav-text">New Order</span>
                                         </a>
                                     </li>
                                     <li class="">
-                                        <a class="sidenav-item-link" href="#">
+                                        <a class="sidenav-item-link" href="../ORDERS/">
                                             <span class="nav-text">Order History</span>
                                         </a>
                                     </li>

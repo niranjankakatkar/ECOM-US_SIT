@@ -53,7 +53,7 @@
             <div class="row g-md-4 g-3">
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="footer-logo">
-                        <div class="theme-logo">
+                    <div class="theme-logo">
                             <a href="index.php">
                                 <img src="../assets/images/logo/Waves Logo Jpg.jpg" class="blur-up lazyload" alt="">
                             </a>
@@ -65,11 +65,11 @@
                             <ul class="address">
                                 <li>
                                     <i data-feather="home"></i>
-                                    <a href="javascript:void(0)">Western Park, California 10846</a>
+                                    <a href="https://maps.google.com/?q=<?=givedata($conn,"company_master","id","1","address")?>" target="_blank"><?=givedata($conn,"company_master","id","1","address")?></a>
                                 </li>
                                 <li>
                                     <i data-feather="mail"></i>
-                                    <a href="javascript:void(0)">support@accssry.com</a>
+                                    <a href="mailto:<?=givedata($conn,"company_master","id","1","email")?>"><?=givedata($conn,"company_master","id","1","email")?></a>
                                 </li>
                             </ul>
                         </div>
@@ -84,23 +84,23 @@
                     <div class="footer-contain">
                         <ul>
                             <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Hot Food Packaging</a>
+                                <a href="shop-left-sidebar.php" class="text-content">Hot Food Packaging</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Cold Food Packaging</a>
+                                <a href="shop-left-sidebar.php" class="text-content">Cold Food Packaging</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Drinking Cups</a>
+                                <a href="shop-left-sidebar.php" class="text-content">Drinking Cups</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Bags & Sheets</a>
+                                <a href="shop-left-sidebar.php" class="text-content">Bags & Sheets</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Cutlery & Nackins</a>
+                                <a href="shop-left-sidebar.php" class="text-content">Cutlery & Nackins</a>
                             </li>
-                            <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Branded</a>
-                            </li>
+                            <!-- <li>
+                                <a href="shop-left-sidebar.php" class="text-content">Branded</a>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -113,43 +113,37 @@
                     <div class="footer-contain">
                         <ul>
                             <li>
-                                <a href="index.php" class="text-content">Home</a>
+                                <a href="../" class="text-content">Home</a>
                             </li>
                            
                             <li>
-                                <a href="#" class="text-content">About Us</a>
+                                <a href="../ABOUT-US" class="text-content">About Us</a>
                             </li>
+                           
                             <li>
-                                <a href="#" class="text-content">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-content">Contact Us</a>
+                                <a href="../CONTACT-US" class="text-content">Contact Us</a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-xl-2 col-sm-3">
                     <div class="footer-title">
-                        <h4>Help Center</h4>
+                        <h4>Privacy Links</h4>
                     </div>
 
                     <div class="footer-contain">
                         <ul>
-                            <li>
-                                <a href="# class="text-content">Your Order</a>
+                        <li>
+                                <a href="shipping-policy.php" class="text-content">Shipping Policy</a>
                             </li>
                             <li>
-                                <a href="#" class="text-content">Your Account</a>
+                                <a href="privacy-policy.php" class="text-content">Privacy Policy</a>
                             </li>
                             <li>
-                                <a href="#" class="text-content">Track Order</a>
+                                <a href="refund-policy.php" class="text-content">Refund Policy</a>
                             </li>
                             <li>
-                                <a href="#" class="text-content">Your Wishlist</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-content">Search</a>
+                                <a href="terms-of-services.php" class="text-content">Terms & Conditions</a>
                             </li>
                             <li>
                                 <a href="#" class="text-content">FAQ</a>
@@ -170,7 +164,7 @@
                                     <i data-feather="phone"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Hotline 24/7 :</h6>
-                                        <h5>1800-982-30145</h5>
+                                        <h5><?=givedata($conn,"company_master","id","1","contact_no1")?></h5>
                                     </div>
                                 </div>
                             </li>
@@ -180,7 +174,7 @@
                                     <i data-feather="mail"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Email Address :</h6>
-                                        <h5>support@accssry.com</h5>
+                                        <h5><?=givedata($conn,"company_master","id","1","email")?></h5>
                                     </div>
                                 </div>
                             </li>
@@ -190,13 +184,13 @@
                                 <ul>
                                     <li class="mb-0">
                                         <a href="https://play.google.com/store/apps" target="_blank">
-                                            <img src="https://themes.pixelstrap.com/fastkart/../assets/images/playstore.svg" class="blur-up lazyload"
+                                            <img src="https://themes.pixelstrap.com/fastkart/assets/images/playstore.svg" class="blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
                                     <li class="mb-0">
                                         <a href="https://www.apple.com/in/app-store/" target="_blank">
-                                            <img src="https://themes.pixelstrap.com/fastkart/../assets/images/appstore.svg" class="blur-up lazyload"
+                                            <img src="https://themes.pixelstrap.com/fastkart/assets/images/appstore.svg" class="blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
@@ -208,38 +202,39 @@
             </div>
         </div>
 
-        <div class="sub-footer section-small-space">
+        <div class="sub-footer section-small-space pt-0 pb-0">
             <div class="reserve">
                 <h6 class="text-content">©2024 Waves Packaging All rights reserved</h6>
             </div>
 
-            <div class="payment" style="font-size: 2.5rem;">
-            
-            <i class="fa-brands fa-cc-apple-pay"></i>
-            <i class="fa-brands fa-google-pay"></i>
-            <i class="fa-brands fa-cc-mastercard"></i>
-            </div>
+            <div class="payment" style="display: flex; justify-content: center; align-items: center; font-size: 2.5rem; margin-top: 20px;">
+            <img src="../assets/images/icon/i-2.png" style="width: 70px; height: 70px; object-fit: contain; ">
+    <img src="../assets/images/icon/i-1.png" style="width: 70px; height: 70px; object-fit: contain; ">
+    <img src="../assets/images/icon/i-3.png" style="width: 70px; height: 70px; object-fit: contain; ">
+   
+</div>
+
 
             <div class="social-link">
                 <h6 class="text-content">Stay connected :</h6>
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/" target="_blank">
+                        <a href="<?=givedata($conn,"company_master","id","1","fb_link")?>" target="_blank">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/" target="_blank">
+                        <a href="<?=givedata($conn,"company_master","id","1","twitter_link")?>" target="_blank">
                             <i class="fa-brands fa-twitter" ></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/" target="_blank">
+                        <a href="<?=givedata($conn,"company_master","id","1","instagram_link")?>" target="_blank">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://in.pinterest.com/" target="_blank">
+                        <a href="<?=givedata($conn,"company_master","id","1","other_link")?>" target="_blank">
                             <i class="fa-brands fa-pinterest-p"></i>
                         </a>
                     </li>

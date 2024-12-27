@@ -60,9 +60,9 @@
             <div class="container-fluid-lg">
                 <div class="row">
                     <div class="col-xxl-3 d-xxl-block d-none">
-                        <div class="top-left-header">
-                            <i class="iconly-Location icli text-white"></i>
-                            <span class="text-white">1418 Riverwood Drive, CA 96052, US</span>
+                        <div class="top-left-header"><a href="https://maps.google.com/?q=<?=givedata($conn,"company_master","id","1","address")?>" target="_blank">
+                            <i class="fa fa-map-marker text-white"></i>
+                            <span class="text-white"><?=givedata($conn,"company_master","id","1","address")?></span></a>
                         </div>
                     </div>
 
@@ -82,7 +82,7 @@
                                 <div>
                                     <div class="timer-notification">
                                         <h6 style="margin-top: 7px;">Something you love is now on sale!
-                                            <a href="shop-left-sidebar.html" class="text-white">Buy Now
+                                            <a href="#" class="text-white">Buy Now
                                                 !</a>
                                         </h6>
                                     </div>
@@ -91,27 +91,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3" style="text-align: center; margin-top: 0px;">
-  <button 
-    style="
-      padding: 10px 20px; 
-      background-color: #fff; 
-      color: black; 
-      font-size: 16px; 
-      /* font-weight: 200px;  */
-      /* text-transform: uppercase;  */
-      border: none; 
-      border-radius: 5px; 
-      cursor: pointer; 
-      transition: background-color 0.3s ease, transform 0.2s ease;"
-    onmouseover="this.style.backgroundColor='#fff'; this.style.transform='scale(1.05)';"
-    onmouseout="this.style.backgroundColor='#fff'; this.style.transform='scale(1)';"
-    onmousedown="this.style.transform='scale(0.95)';"
-    onmouseup="this.style.transform='scale(1.05)';"
-  >
-    Wholesaler Sign-Up
-  </button>
-</div>
+                   
 
                 </div>
             </div>
@@ -171,13 +151,13 @@
                                         </div>
                                     </li>
                                     <li class="right-side">
-                                        <a href="contact-us.html" class="delivery-login-box">
+                                        <a href="tel:<?=givedata($conn,"company_master","id","1","contact_no1")?>" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <i data-feather="phone-call"></i>
                                             </div>
                                             <div class="delivery-detail">
                                                 <h6>24/7 Delivery</h6>
-                                                <h5>+91 888 104 2340</h5>
+                                                <h5><?=givedata($conn,"company_master","id","1","contact_no1")?></h5>
                                             </div>
                                         </a>
                                     </li>
@@ -208,7 +188,7 @@
                                                                 <a href="product-left-thumbnail.html">
                                                                     <h5>Fantasy Crunchy Choco Chip Cookies</h5>
                                                                 </a>
-                                                                <h6><span>1 x</span> $80.58</h6>
+                                                                <h6><span>1 x</span> £80.58</h6>
                                                                 <button class="close-button close_button">
                                                                     <i class="fa-solid fa-xmark"></i>
                                                                 </button>
@@ -228,7 +208,7 @@
                                                                     <h5>Peanut Butter Bite Premium Butter Cookies 600 g
                                                                     </h5>
                                                                 </a>
-                                                                <h6><span>1 x</span> $25.68</h6>
+                                                                <h6><span>1 x</span> £25.68</h6>
                                                                 <button class="close-button close_button">
                                                                     <i class="fa-solid fa-xmark"></i>
                                                                 </button>
@@ -239,7 +219,7 @@
 
                                                 <div class="price-box">
                                                     <h5>Total :</h5>
-                                                    <h4 class="theme-color fw-bold">$106.58</h4>
+                                                    <h4 class="theme-color fw-bold">£106.58</h4>
                                                 </div>
 
                                                 <div class="button-group">
@@ -255,9 +235,9 @@
                                         
                                             if($_SESSION['tokenID']==""){
                                                 ?>
-                                                <div class="delivery-login-box">
+                                                <div class="delivery-login-box" >
                                                     <div class="delivery-icon">
-                                                    <a href="SIGN-IN/"><i data-feather="user"></i></a>  
+                                                    <a href="SIGN-IN/"><i  data-feather="user"></i></a>  
                                                     </div>
                                                     <div class="delivery-detail">
                                                         
@@ -269,7 +249,7 @@
                                                 ?>
                                                      <div class="delivery-login-box">
                                                         <div class="delivery-icon">
-                                                            <i data-feather="user"></i>
+                                                            <i style="color:#062d6a;font-weight: 900" data-feather="user"></i>
                                                         </div>
                                                         <div class="delivery-detail">
                                                             <h6>Hello,</h6>
@@ -322,37 +302,37 @@
 
                                             <ul class="dropdown-menu">
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Takeaway Food Boxes</a>
+                                                    <a class="dropdown-item" href="#">Takeaway Food Boxes</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Food Trays</a>
+                                                    <a class="dropdown-item" href="#">Food Trays</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Craft Food Bowls</a>
+                                                    <a class="dropdown-item" href="#">Craft Food Bowls</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Soop & Noodles Container</a>
+                                                    <a class="dropdown-item" href="#">Soop & Noodles Container</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Food Pails</a>
+                                                    <a class="dropdown-item" href="#">Food Pails</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Chip Scoops & Cones</a>
+                                                    <a class="dropdown-item" href="#">Chip Scoops & Cones</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Pizza & Dessert Boxes</a>
+                                                    <a class="dropdown-item" href="#">Pizza & Dessert Boxes</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Category Focus</a>
+                                                    <a class="dropdown-item" href="#">Category Focus</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Sauces & Portion Ports</a>
+                                                    <a class="dropdown-item" href="#">Sauces & Portion Ports</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Foil Container</a>
+                                                    <a class="dropdown-item" href="#">Foil Container</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Plates & Bowls</a>
+                                                    <a class="dropdown-item" href="#">Plates & Bowls</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -363,25 +343,25 @@
 
                                             <ul class="dropdown-menu">
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-category-slider.html">Salad Boxes</a>
+                                                    <a class="dropdown-item" href="#">Salad Boxes</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-category.html">Salad Bowls</a>
+                                                    <a class="dropdown-item" href="#">Salad Bowls</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-banner.html">Platter Boxes</a>
+                                                    <a class="dropdown-item" href="#">Platter Boxes</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Food Trays</a>
+                                                    <a class="dropdown-item" href="#">Food Trays</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-list.html">Sandwich & Wrap Boxes</a>
+                                                    <a class="dropdown-item" href="#">Sandwich & Wrap Boxes</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-right-sidebar.html">Plastic Deli Containers</a>
+                                                    <a class="dropdown-item" href="#">Plastic Deli Containers</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-top-filter.html">Ice Cream Container</a>
+                                                    <a class="dropdown-item" href="#">Ice Cream Container</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -392,28 +372,28 @@
 
                                                 <ul class="dropdown-menu">
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-category-slider.html">Hot Drink Cups</a>
+                                                    <a class="dropdown-item" href="#">Hot Drink Cups</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-category.html">Smoothie Cups</a>
+                                                    <a class="dropdown-item" href="#">Smoothie Cups</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-banner.html">Pint & Half Pint Cups</a>
+                                                    <a class="dropdown-item" href="#">Pint & Half Pint Cups</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Shoot Glasses</a>
+                                                    <a class="dropdown-item" href="#">Shoot Glasses</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-list.html">Champagne & Wine Glasses</a>
+                                                    <a class="dropdown-item" href="#">Champagne & Wine Glasses</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-right-sidebar.html">Shot Glasses</a>
+                                                    <a class="dropdown-item" href="#">Shot Glasses</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-top-filter.html">Water Tumblers & Cones</a>
+                                                    <a class="dropdown-item" href="#">Water Tumblers & Cones</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-top-filter.html">Paper Straws & Accessories</a>
+                                                    <a class="dropdown-item" href="#">Paper Straws & Accessories</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -425,22 +405,22 @@
                                            
                                                 <ul class="dropdown-menu">
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-category-slider.html">Bags & Sheets</a>
+                                                    <a class="dropdown-item" href="#">Bags & Sheets</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-category.html">Paper Carrier Bags</a>
+                                                    <a class="dropdown-item" href="#">Paper Carrier Bags</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-banner.html">Sandwich Bags</a>
+                                                    <a class="dropdown-item" href="#">Sandwich Bags</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-left-sidebar.html">Open Sided Bags</a>
+                                                    <a class="dropdown-item" href="#">Open Sided Bags</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-list.html">Greaseproof Paper Sheets</a>
+                                                    <a class="dropdown-item" href="#">Greaseproof Paper Sheets</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="shop-right-sidebar.html">Shot Glasses</a>
+                                                    <a class="dropdown-item" href="#">Shot Glasses</a>
                                                 </li>
                                                 
                                             </ul>
@@ -451,24 +431,23 @@
                                                 data-bs-toggle="dropdown">CUTLERY & NAPKINS</a>
                                             <ul class="dropdown-menu">
                                                 <li>
-                                                    <a class="dropdown-item" href="blog-detail.html">Wooden Cutlery & Others</a>
+                                                    <a class="dropdown-item" href="#">Wooden Cutlery & Others</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="blog-grid.html">Plastic Cutlery</a>
+                                                    <a class="dropdown-item" href="#">Plastic Cutlery</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="blog-list.html">Napkins</a>
+                                                    <a class="dropdown-item" href="#">Napkins</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="blog-list.html">Greaseproof Paper Sheets</a>
+                                                    <a class="dropdown-item" href="#">Greaseproof Paper Sheets</a>
                                                 </li>
                                             </ul>
                                         </li>
 
 
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                                data-bs-toggle="dropdown">BRANDED</a>
+                                        <li class="nav-item ">
+                                            <a class="nav-link" >BRANDED</a>
                                           
                                         </li>
                                        
@@ -498,7 +477,7 @@
             </li>
 
             <li class="mobile-category">
-                <a href="javascript:void(0)">
+                <a href="ABOUT-US">
                 <i class="fa-solid fa-eject icli"></i>
                     <span>About Us</span>
                 </a>

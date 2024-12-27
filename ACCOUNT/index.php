@@ -168,7 +168,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                         <h2>My Dashboard</h2>
                                         <span class="title-leaf">
                                             <svg class="icon-width bg-gray">
-                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/../assets/svg/leaf.svg#leaf"></use>
+                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg"></use>
                                             </svg>
                                         </span>
                                     </div>
@@ -184,9 +184,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                         <div class="row g-sm-4 g-3">
                                             <div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
                                                 <div class="total-contain">
-                                                    <img src="https://themes.pixelstrap.com/fastkart/../assets/images/svg/order.svg"
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/order.svg"
                                                         class="img-1 blur-up lazyload" alt="">
-                                                    <img src="https://themes.pixelstrap.com/fastkart/../assets/images/svg/order.svg" class="blur-up lazyload"
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/order.svg" class="blur-up lazyload"
                                                         alt="">
                                                     <div class="total-detail">
                                                         <h5>Total Order</h5>
@@ -197,9 +197,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
                                             <div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
                                                 <div class="total-contain">
-                                                    <img src="https://themes.pixelstrap.com/fastkart/../assets/images/svg/pending.svg"
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/pending.svg"
                                                         class="img-1 blur-up lazyload" alt="">
-                                                    <img src="https://themes.pixelstrap.com/fastkart/../assets/images/svg/pending.svg" class="blur-up lazyload"
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/pending.svg" class="blur-up lazyload"
                                                         alt="">
                                                     <div class="total-detail">
                                                         <h5>Total Pending Order</h5>
@@ -210,9 +210,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
                                             <div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
                                                 <div class="total-contain">
-                                                    <img src="https://themes.pixelstrap.com/fastkart/../assets/images/svg/wishlist.svg"
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/wishlist.svg"
                                                         class="img-1 blur-up lazyload" alt="">
-                                                    <img src="https://themes.pixelstrap.com/fastkart/../assets/images/svg/wishlist.svg"
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/wishlist.svg"
                                                         class="blur-up lazyload" alt="">
                                                     <div class="total-detail">
                                                         <h5>Total Wishlist</h5>
@@ -241,17 +241,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                             </div>
                                         </div>
 
-                                        <div class="col-xxl-6">
-                                            <div class="dashboard-content-title">
-                                                <h4>Newsletters <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                        data-bs-target="#editProfile">Edit</a></h4>
-                                            </div>
-                                            <div class="dashboard-detail">
-                                                <h6 class="text-content">You are currently not subscribed to any
-                                                    newsletter</h6>
-                                            </div>
-                                        </div>
-
+                                        
                                         <div class="col-12">
                                             <div class="dashboard-content-title">
                                                 <h4>Address Book <a href="javascript:void(0)" data-bs-toggle="modal"
@@ -290,7 +280,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                         <h2>My Wishlist History</h2>
                                         <span class="title-leaf title-leaf-gray">
                                             <svg class="icon-width bg-gray">
-                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/../assets/svg/leaf.svg#leaf"></use>
+                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
                                             </svg>
                                         </span>
                                     </div>
@@ -723,7 +713,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                         <h2>My Orders History</h2>
                                         <span class="title-leaf title-leaf-gray">
                                             <svg class="icon-width bg-gray">
-                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/../assets/svg/leaf.svg#leaf"></use>
+                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
                                             </svg>
                                         </span>
                                     </div>
@@ -1048,7 +1038,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                             <h2>My Address Book</h2>
                                             <span class="title-leaf">
                                                 <svg class="icon-width bg-gray">
-                                                    <use xlink:href="https://themes.pixelstrap.com/fastkart/../assets/svg/leaf.svg#leaf"></use>
+                                                    <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
                                                 </svg>
                                             </span>
                                         </div>
@@ -1327,7 +1317,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                             <h2>My Card Details</h2>
                                             <span class="title-leaf">
                                                 <svg class="icon-width bg-gray">
-                                                    <use xlink:href="https://themes.pixelstrap.com/fastkart/../assets/svg/leaf.svg#leaf"></use>
+                                                    <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
                                                 </svg>
                                             </span>
                                         </div>
@@ -1491,7 +1481,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                         <h2>My Profile</h2>
                                         <span class="title-leaf">
                                             <svg class="icon-width bg-gray">
-                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/../assets/svg/leaf.svg#leaf"></use>
+                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
                                             </svg>
                                         </span>
                                     </div>
@@ -1639,7 +1629,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                         <h2>My Download</h2>
                                         <span class="title-leaf">
                                             <svg class="icon-width bg-gray">
-                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/../assets/svg/leaf.svg#leaf"></use>
+                                                <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
                                             </svg>
                                         </span>
                                     </div>
@@ -2260,6 +2250,284 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         </div>
     </section>
     <!-- User Dashboard Section End -->
+
+    <!-- Edit Profile Start -->
+    <div class="modal fade theme-modal" id="editProfile" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-xxl-12">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <input type="text" class="form-control" id="pname" value="<?=givedata($conn,"user_master","token_key",$_SESSION['tokenID'],"full_name")?>">
+                                    <label for="pname">Full Name</label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-xxl-6">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <input type="email" class="form-control" id="email1" value="<?=givedata($conn,"user_master","token_key",$_SESSION['tokenID'],"email")?>">
+                                    <label for="email1">Email address</label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-xxl-6">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <input class="form-control" type="tel" value="<?=givedata($conn,"user_master","token_key",$_SESSION['tokenID'],"mobile_no")?>" name="mobile" id="mobile"
+                                        maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value =
+                                            this.value.slice(0, this.maxLength);">
+                                    <label for="mobile">Mobile Number</label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-12">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <input type="text" class="form-control" id="address1" 
+                                        value="<?=givedata($conn,"address_master","user_token_id",$_SESSION['tokenID'],"address")?>">
+                                    <label for="address1">Add Address</label>
+                                </div>
+                            </form>
+                        </div>
+
+                       
+
+                        <div class="col-xxl-4">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <select class="form-select" id="floatingSelect1">
+                                        <option selected>Choose Your Country</option>
+                                        <option value="kingdom">United Kingdom</option>
+                                        <option value="states">United States</option>
+                                        <option value="fra">France</option>
+                                        <option value="china">China</option>
+                                        <option value="spain">Spain</option>
+                                        <option value="italy">Italy</option>
+                                        <option value="turkey">Turkey</option>
+                                        <option value="germany">Germany</option>
+                                        <option value="russian">Russian Federation</option>
+                                        <option value="malay">Malaysia</option>
+                                        <option value="mexico">Mexico</option>
+                                        <option value="austria">Austria</option>
+                                        <option value="hong">Hong Kong SAR, China</option>
+                                        <option value="ukraine">Ukraine</option>
+                                        <option value="thailand">Thailand</option>
+                                        <option value="saudi">Saudi Arabia</option>
+                                        <option value="canada">Canada</option>
+                                        <option value="singa">Singapore</option>
+                                    </select>
+                                    <label for="floatingSelect">Country</label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <select class="form-select" id="floatingSelect">
+                                        <option selected>Choose Your City</option>
+                                        <option value="kingdom">India</option>
+                                        <option value="states">Canada</option>
+                                        <option value="fra">Dubai</option>
+                                        <option value="china">Los Angeles</option>
+                                        <option value="spain">Thailand</option>
+                                    </select>
+                                    <label for="floatingSelect">City</label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <input type="text" class="form-control" id="address3" value="<?=givedata($conn,"address_master","user_token_id",$_SESSION['tokenID'],"pincode")?>">
+                                    <label for="address3">Pin Code</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-animation btn-md fw-bold"
+                        data-bs-dismiss="modal">Close</button>
+                    <button type="button" data-bs-dismiss="modal"
+                        class="btn theme-bg-color btn-md fw-bold text-light">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Profile End -->
+
+    <div class="modal fade theme-modal" id="add-address" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add a new address</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-floating mb-4 theme-form-floating">
+                            <input type="text" class="form-control" id="fname" placeholder="Enter First Name">
+                            <label for="fname">First Name</label>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-floating mb-4 theme-form-floating">
+                            <input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
+                            <label for="lname">Last Name</label>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-floating mb-4 theme-form-floating">
+                            <input type="email" class="form-control" id="email" placeholder="Enter Email Address">
+                            <label for="email">Email Address</label>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-floating mb-4 theme-form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="address"
+                                style="height: 100px"></textarea>
+                            <label for="address">Enter Address</label>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-floating mb-4 theme-form-floating">
+                            <input type="email" class="form-control" id="pin" placeholder="Enter Pin Code">
+                            <label for="pin">Pin Code</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn theme-bg-color btn-md text-white" data-bs-dismiss="modal">Save
+                        changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- Edit Card Start -->
+    <div class="modal fade theme-modal" id="editCard" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel8">Edit Card</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-xxl-6">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <input type="text" class="form-control" id="finame" value="Mark">
+                                    <label for="finame">First Name</label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-xxl-6">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <input type="text" class="form-control" id="laname" value="Jecno">
+                                    <label for="laname">Last Name</label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <form>
+                                <div class="form-floating theme-form-floating">
+                                    <select class="form-select" id="floatingSelect12">
+                                        <option selected>Card Type</option>
+                                        <option value="kingdom">Visa Card</option>
+                                        <option value="states">MasterCard Card</option>
+                                        <option value="fra">RuPay Card</option>
+                                        <option value="china">Contactless Card</option>
+                                        <option value="spain">Maestro Card</option>
+                                    </select>
+                                    <label for="floatingSelect12">Card Type</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-animation btn-md fw-bold"
+                        data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn theme-bg-color btn-md fw-bold text-light">Update Card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Card End -->
+
+    <!-- Remove Profile Modal Start -->
+    <div class="modal fade theme-modal remove-profile" id="removeProfile" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header d-block text-center">
+                    <h5 class="modal-title w-100" id="exampleModalLabel22">Are You Sure ?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <p>The permission for the use/group, preview is inherited from the object, object will create a
+                            new permission for this object</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-animation btn-md fw-bold" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn theme-bg-color btn-md fw-bold text-light"
+                        data-bs-target="#removeAddress" data-bs-toggle="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade theme-modal remove-profile" id="removeAddress" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLabel12">Done!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box text-center">
+                        <h4 class="text-content">It's Removed.</h4>
+                    </div>
+                </div>
+                <div class="modal-footer pt-0">
+                    <button type="button" class="btn theme-bg-color btn-md fw-bold text-light"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php include '../inner_footer.php';?> 
 

@@ -113,15 +113,40 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <div class="forgot-box">
-                                        <div class="form-check ps-0 m-0 remember-box">
-                                            <input class="checkbox_animated check-box" type="checkbox"
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">I agree with
-                                                <span>Terms</span> and <span>Privacy</span></label>
-                                        </div>
+                                <label class="form-label fw-semibold">I am a:</label>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <label class="radio-card">
+                                        <input type="radio" name="user_type" id="retailer" value="Retailer">
+                                        <span>Retailer</span>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="user_type" id="wholesaler" value="Wholesaler">
+                                        <span>Wholesaler</span>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="user_type" id="mega_restaurant"
+                                            value="Mega Restaurant">
+                                        <span>Mega Restaurant</span>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="user_type" id="shopkeeper" value="Shopkeeper">
+                                        <span>Shopkeeper</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="forgot-box">
+                                    <div class="form-check ps-0 m-0 remember-box">
+                                        <input class="checkbox_animated check-box" type="checkbox"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">I agree with
+                                            <span style="color: #062d6a;">Terms</span> and <span style="color: #062d6a;">Privacy</span></label>
                                     </div>
                                 </div>
+                            </div>
+
+                                
 
                                 <div class="col-12">
                                     <button  id="submitButton" class="btn btn-animation w-100" type="submit">Sign Up</button>
