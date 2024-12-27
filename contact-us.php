@@ -1,8 +1,28 @@
 
 
-<?php include 'header.php';?> 
+<?php
+include 'niru_collection.php';
+include 'header.php';
 
 
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+	$token_id=generateRandomString(15);
+    $full_name=$_POST['first_name']." ".$_POST['last_name'];
+    $email=$_POST['email'];
+    $phone_no=$_POST['phone_no'];
+    $msg=$_POST['msg'];
+    
+    $sql="INSERT INTO contact_us(token_id,full_name,email,phone_no,msg,respocse,flag) VALUES('$token_id','$full_name','$email','$phone_no','$msg','','0')";
+	if($conn->query($sql))
+	{
+		?>		  
+		 <script>alert("added"); window.location.href="contact-us.php"; </script>
+		  <?php
+	}
+}
+
+?> 
     <!-- Breadcrumb Section Start -->
     <section class="breadcrumb-section pt-0">
         <div class="container-fluid-lg">
@@ -117,13 +137,14 @@
                     <div class="title d-xxl-none d-block">
                         <h2>Contact Us</h2>
                     </div>
+                    <form method="POST" >
                     <div class="right-sidebar-box">
                         <div class="row">
                             <div class="col-xxl-6 col-lg-12 col-sm-6">
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput" class="form-label">First Name</label>
                                     <div class="custom-input">
-                                        <input type="text" class="form-control" id="exampleFormControlInput"
+                                        <input type="text" class="form-control" id="exampleFormControlInput" name="first_name"
                                             placeholder="Enter First Name">
                                         <i class="fa-solid fa-user"></i>
                                     </div>
@@ -134,7 +155,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput1" class="form-label">Last Name</label>
                                     <div class="custom-input">
-                                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" name="last_name"
                                             placeholder="Enter Last Name">
                                         <i class="fa-solid fa-user"></i>
                                     </div>
@@ -145,7 +166,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput2" class="form-label">Email Address</label>
                                     <div class="custom-input">
-                                        <input type="email" class="form-control" id="exampleFormControlInput2"
+                                        <input type="email" class="form-control" id="exampleFormControlInput2" name="email"
                                             placeholder="Enter Email Address">
                                         <i class="fa-solid fa-envelope"></i>
                                     </div>
@@ -156,7 +177,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput3" class="form-label">Phone Number</label>
                                     <div class="custom-input">
-                                        <input type="tel" class="form-control" id="exampleFormControlInput3"
+                                        <input type="tel" class="form-control" id="exampleFormControlInput3" name="phone_no"
                                             placeholder="Enter Your Phone Number" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value =
                                             this.value.slice(0, this.maxLength);">
                                         <i class="fa-solid fa-mobile-screen-button"></i>
@@ -168,15 +189,16 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlTextarea" class="form-label">Message</label>
                                     <div class="custom-textarea">
-                                        <textarea class="form-control" id="exampleFormControlTextarea"
+                                        <textarea class="form-control" id="exampleFormControlTextarea" name="msg"
                                             placeholder="Enter Your Message" rows="6"></textarea>
                                         <i class="fa-solid fa-message"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-animation btn-md fw-bold ms-auto">Send Message</button>
+                        <button class="btn btn-animation btn-md fw-bold ms-auto" type="submit">Send Message</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -200,5 +222,4 @@
 </body>
 
 
-<!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Dec 2024 06:36:23 GMT -->
 </html>  

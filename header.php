@@ -281,7 +281,7 @@
                                                         <ul class="user-box-name">
                                                             <li class="product-box-contain">
                                                                 <i></i>
-                                                                <a href="#">Profile</a>
+                                                                <a href="ACCOUNT/">Profile</a>
                                                             </li>
                                                              <li class="product-box-contain">
                                                                 <a href="#">Orders</a>

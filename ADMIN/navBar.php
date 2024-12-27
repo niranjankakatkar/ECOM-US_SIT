@@ -38,29 +38,13 @@ if($_SESSION['loginID']=="")
                         </li>
 
                         <!-- Vendors -->
-                        <li class="has-sub">
-                            <a class="sidenav-item-link" href="javascript:void(0)">
-                                <i class="mdi mdi-account-group-outline"></i>
-                                <span class="nav-text">Vendors</span> <b class="caret"></b>
-                            </a>
-                            <div class="collapse">
-                                <ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
-                                    
-                                    <li class="">
-                                        <a class="sidenav-item-link" href="#">
-                                            <span class="nav-text">Vendor List</span>
-                                        </a>
-                                    </li>
-                                   
-                                </ul>
-                            </div>
-                        </li>
+                       
 
                         <!-- Users -->
                         <li class="has-sub">
                             <a class="sidenav-item-link" href="javascript:void(0)">
                                 <i class="mdi mdi-account-group"></i>
-                                <span class="nav-text">Users</span> <b class="caret"></b>
+                                <span class="nav-text">Retailers</span> <b class="caret"></b>
                             </a>
                             <div class="collapse">
                                 <ul class="sub-menu" id="users" data-parent="#sidebar-menu">
@@ -68,10 +52,39 @@ if($_SESSION['loginID']=="")
 
                                     <li class="">
                                         <a class="sidenav-item-link" href="#">
-                                            <span class="nav-text">User List</span>
+                                            <span class="nav-text">Retailers List</span>
                                         </a>
                                     </li>
                                   
+                                </ul>
+                            </div>
+                            
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="sidenav-item-link" href="javascript:void(0)">
+                                <i class="mdi mdi-account-group-outline"></i>
+                                <span class="nav-text">Other Users</span> <b class="caret"></b>
+                            </a>
+                            <div class="collapse">
+                                <ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
+                                    
+                                    <li class="">
+                                        <a class="sidenav-item-link" href="../Wholseller/?id=1">
+                                            <span class="nav-text">Wholseller</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a class="sidenav-item-link" href="../Wholseller/?id=2">
+                                            <span class="nav-text">Mega Restaurant</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a class="sidenav-item-link" href="../Wholseller/?id=3">
+                                            <span class="nav-text">Shopkeeper</span>
+                                        </a>
+                                    </li>
+                                   
                                 </ul>
                             </div>
                             <hr>
