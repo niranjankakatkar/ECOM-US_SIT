@@ -111,7 +111,7 @@
                                     <i class="fa-solid fa-bars"></i>
                                 </span>
                             </button>
-                            <a href="index.php" class="web-logo nav-logo">
+                            <a href="../index.php" class="web-logo nav-logo">
                                 <img src="../assets/images/logo/Waves Logo Jpg.jpg" class="img-fluid blur-up lazyload "  alt="" style="height: 100px;">
                             </a>
 
@@ -223,8 +223,8 @@
                                                 </div>
 
                                                 <div class="button-group">
-                                                    <a href="cart.html" class="btn btn-sm cart-button">View Cart</a>
-                                                    <a href="checkout.html" class="btn btn-sm cart-button theme-bg-color
+                                                    <a href="#" class="btn btn-sm cart-button">View Cart</a>
+                                                    <a href="#" class="btn btn-sm cart-button theme-bg-color
                                                     text-white">Checkout</a>
                                                 </div>
                                             </div>
@@ -470,35 +470,35 @@
     <div class="mobile-menu d-md-none d-block mobile-cart">
         <ul>
             <li class="active">
-                <a href="index.html">
+                <a href="../">
                 <i class="fa-solid fa-house icli"></i>
                     <span>Home</span>
                 </a>
             </li>
 
             <li class="mobile-category">
-                <a href="ABOUT-US">
+                <a href="../ABOUT-US">
                 <i class="fa-solid fa-eject icli"></i>
                     <span>About Us</span>
                 </a>
             </li>
 
             <li>
-                <a href="search.html" class="search-box">
+                <a href="../SEARCH" class="search-box">
                 <i class="fa-solid fa-magnifying-glass icli"></i>
                     <span>Search</span>
                 </a>
             </li>
 
             <li>
-                <a href="wishlist.html" class="notifi-wishlist">
+                <a href="../WISHLIAST" class="notifi-wishlist">
                 <i class="fa-solid fa-heart icli"></i>
                     <span>My Wish</span>
                 </a>
             </li>
 
             <li>
-                <a href="cart.html">
+                <a href="../CART">
                 <i class="fa-solid fa-cart-shopping icli"></i>
                     <span>Cart</span>
                 </a>

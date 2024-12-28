@@ -468,9 +468,9 @@
 
     <!-- mobile fix menu start -->
     <div class="mobile-menu d-md-none d-block mobile-cart">
-        <ul>
+    <ul>
             <li class="active">
-                <a href="index.html">
+                <a href="index.php">
                 <i class="fa-solid fa-house icli"></i>
                     <span>Home</span>
                 </a>
@@ -484,21 +484,21 @@
             </li>
 
             <li>
-                <a href="search.html" class="search-box">
+                <a href="SEARCH" class="search-box">
                 <i class="fa-solid fa-magnifying-glass icli"></i>
                     <span>Search</span>
                 </a>
             </li>
 
             <li>
-                <a href="wishlist.html" class="notifi-wishlist">
+                <a href="WISHLIAST" class="notifi-wishlist">
                 <i class="fa-solid fa-heart icli"></i>
                     <span>My Wish</span>
                 </a>
             </li>
 
             <li>
-                <a href="cart.html">
+                <a href="CART">
                 <i class="fa-solid fa-cart-shopping icli"></i>
                     <span>Cart</span>
                 </a>
