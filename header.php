@@ -91,7 +91,27 @@
                         </div>
                     </div>
 
-                   
+                    <div class="col-lg-3" style="text-align: center; margin-top: 0px;">
+                        <a href="SIGN-UP" style="text-decoration: none;">
+                            <button style="
+      padding: 10px 20px; 
+      background-color: #fff; 
+      color: black; 
+      font-size: 16px; 
+      /* font-weight: 200px;  */
+      /* text-transform: uppercase;  */
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      transition: background-color 0.3s ease, transform 0.2s ease;"
+                                onmouseover="this.style.backgroundColor='#fff'; this.style.transform='scale(1.05)';"
+                                onmouseout="this.style.backgroundColor='#fff'; this.style.transform='scale(1)';"
+                                onmousedown="this.style.transform='scale(0.95)';"
+                                onmouseup="this.style.transform='scale(1.05)';">
+                                Wholesaler Sign-Up
+                            </button>
+                        </a>
+                    </div>
 
                 </div>
             </div>
@@ -161,8 +181,12 @@
                                             </div>
                                         </a>
                                     </li>
+                                    <?php
+                                        
+                                        if($_SESSION['tokenID']!=""){
+                                            ?>
                                     <li class="right-side">
-                                        <a href="wishlist.html" class="btn p-0 position-relative header-wishlist">
+                                        <a href="WISHLIST" class="btn p-0 position-relative header-wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -223,13 +247,14 @@
                                                 </div>
 
                                                 <div class="button-group">
-                                                    <a href="cart.html" class="btn btn-sm cart-button">View Cart</a>
-                                                    <a href="checkout.html" class="btn btn-sm cart-button theme-bg-color
+                                                    <a href="CART" class="btn btn-sm cart-button">View Cart</a>
+                                                    <a href="CHECKOUT" class="btn btn-sm cart-button theme-bg-color
                                                     text-white">Checkout</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
+                                    <?php } ?>
                                     <li class="right-side onhover-dropdown">
                                         <?php
                                         

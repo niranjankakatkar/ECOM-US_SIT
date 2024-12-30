@@ -162,7 +162,7 @@
                                         </a>
                                     </li>
                                     <li class="right-side">
-                                        <a href="wishlist.html" class="btn p-0 position-relative header-wishlist">
+                                        <a href="../WISHLIAST" class="btn p-0 position-relative header-wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -223,8 +223,8 @@
                                                 </div>
 
                                                 <div class="button-group">
-                                                    <a href="#" class="btn btn-sm cart-button">View Cart</a>
-                                                    <a href="#" class="btn btn-sm cart-button theme-bg-color
+                                                    <a href="../CART" class="btn btn-sm cart-button">View Cart</a>
+                                                    <a href="../CHECKOUT" class="btn btn-sm cart-button theme-bg-color
                                                     text-white">Checkout</a>
                                                 </div>
                                             </div>

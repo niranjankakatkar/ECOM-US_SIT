@@ -1,4 +1,4 @@
-<?php include 'header.php';?>
+<?php include 'niru_collection.php';include 'header.php';?>
 
  <!-- Breadcrumb Section Start -->
  <section class="breadcrumb-section pt-0">

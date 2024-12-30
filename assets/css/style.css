@@ -22413,11 +22413,11 @@ header .top-nav .navbar-top .middle-box .search-box .input-group .form-control:f
 }
 
 header .top-nav .navbar-top .middle-box .search-box .input-group button {
-    background-color: #ff7272;
+    background-color: #34802e;
     color: #fff;
     padding: 14px 20px;
     border-radius: 5px;
-    border: 1px solid #ff7272
+    border: 1px solid #34802e
 }
 
 header .top-nav .navbar-top .middle-box .search-box .input-group button.bg-theme {

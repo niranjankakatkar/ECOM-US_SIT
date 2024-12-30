@@ -70,17 +70,17 @@ if($_SESSION['loginID']=="")
                                 <ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
                                     
                                     <li class="">
-                                        <a class="sidenav-item-link" href="../Wholseller/?id=1">
-                                            <span class="nav-text">Wholseller</span>
+                                        <a class="sidenav-item-link" href="../OtherUsers/?id=1">
+                                            <span class="nav-text">OtherUsers</span>
                                         </a>
                                     </li>
                                     <li class="">
-                                        <a class="sidenav-item-link" href="../Wholseller/?id=2">
+                                        <a class="sidenav-item-link" href="../OtherUsers/?id=2">
                                             <span class="nav-text">Mega Restaurant</span>
                                         </a>
                                     </li>
                                     <li class="">
-                                        <a class="sidenav-item-link" href="../Wholseller/?id=3">
+                                        <a class="sidenav-item-link" href="../OtherUsers/?id=3">
                                             <span class="nav-text">Shopkeeper</span>
                                         </a>
                                     </li>
@@ -106,6 +106,11 @@ if($_SESSION['loginID']=="")
                                     <li class="">
                                         <a class="sidenav-item-link" href="../Sub-Category">
                                             <span class="nav-text">Sub Category</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a class="sidenav-item-link" href="../Sub-Category-1">
+                                            <span class="nav-text">Sub Child Category</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -167,11 +172,34 @@ if($_SESSION['loginID']=="")
                             </div>
                         </li>
 
+                         <!-- Orders -->
+                         <li class="has-sub">
+                            <a class="sidenav-item-link" href="javascript:void(0)">
+                                <i class="mdi mdi-file-image"></i>
+                                <span class="nav-text">Advertisement</span> <b class="caret"></b>
+                            </a>
+                            <div class="collapse">
+                                <ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
+                                    <li class="">
+                                        <a class="sidenav-item-link" href="../ADVERTISEMENT/">
+                                            <span class="nav-text">Banner</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a class="sidenav-item-link" href="../ADVERTISEMENT/pindex.php">
+                                            <span class="nav-text">Promostional Messages</span>
+                                        </a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </li>
+
                         <!-- Reviews -->
                         <li>
                             <a class="sidenav-item-link" href="#">
                                 <i class="mdi mdi-star-half"></i>
-                                <span class="nav-text">Reviews</span>
+                                <span class="nav-text">Contact Us Data</span>
                             </a>
                         </li>
 

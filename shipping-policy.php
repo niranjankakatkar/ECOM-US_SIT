@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="assets/css/vendors/branded.css"></link>
-<?php include 'header.php';?> 
+<?php include 'niru_collection.php'; include 'header.php';?> 
 
 
     <!-- Breadcrumb Section Start -->

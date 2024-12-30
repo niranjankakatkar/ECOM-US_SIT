@@ -1,7 +1,7 @@
- <!-- Footer Section Start -->
- <footer class="section-t-space" >
+<!-- Footer Section Start -->
+<footer class="section-t-space">
     <div class="container-fluid-lg">
-       <div class="main-footer section-b-space section-t-space">
+        <div class="main-footer section-b-space section-t-space">
             <div class="row g-md-4 g-3">
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="footer-logo">
@@ -12,16 +12,19 @@
                         </div>
 
                         <div class="footer-logo-contain">
-                            <p >At Waves Packaging, we are dedicated to providing high-quality and innovative packaging solutions</p>
+                            <p>At Waves Packaging, we are dedicated to providing high-quality and innovative packaging
+                                solutions</p>
 
                             <ul class="address">
                                 <li>
                                     <i data-feather="home"></i>
-                                    <a href="https://maps.google.com/?q=<?=givedata($conn,"company_master","id","1","address")?>" target="_blank"><?=givedata($conn,"company_master","id","1","address")?></a>
+                                    <a href="https://maps.google.com/?q=<?= givedata($conn, "company_master", "id", "1", "address") ?>"
+                                        target="_blank"><?= givedata($conn, "company_master", "id", "1", "address") ?></a>
                                 </li>
                                 <li>
                                     <i data-feather="mail"></i>
-                                    <a href="mailto:<?=givedata($conn,"company_master","id","1","email")?>"><?=givedata($conn,"company_master","id","1","email")?></a>
+                                    <a
+                                        href="mailto:<?= givedata($conn, "company_master", "id", "1", "email") ?>"><?= givedata($conn, "company_master", "id", "1", "email") ?></a>
                                 </li>
                             </ul>
                         </div>
@@ -36,22 +39,22 @@
                     <div class="footer-contain">
                         <ul>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Hot Food Packaging</a>
+                                <a href="#" class="text-content">Hot Food Packaging</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Cold Food Packaging</a>
+                                <a href="#" class="text-content">Cold Food Packaging</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Drinking Cups</a>
+                                <a href="#" class="text-content">Drinking Cups</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Bags & Sheets</a>
+                                <a href="#" class="text-content">Bags & Sheets</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Cutlery & Nackins</a>
+                                <a href="#" class="text-content">Cutlery & Nackins</a>
                             </li>
                             <!-- <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Branded</a>
+                                <a href="#" class="text-content">Branded</a>
                             </li> -->
                         </ul>
                     </div>
@@ -64,14 +67,14 @@
 
                     <div class="footer-contain">
                         <ul>
-                        <li>
+                            <li>
                                 <a href="index.php" class="text-content">Home</a>
                             </li>
-                           
+
                             <li>
                                 <a href="ABOUT-US" class="text-content">About Us</a>
                             </li>
-                           
+
                             <li>
                                 <a href="CONTACT-US" class="text-content">Contact Us</a>
                             </li>
@@ -86,7 +89,7 @@
 
                     <div class="footer-contain">
                         <ul>
-                        <li>
+                            <li>
                                 <a href="shipping-policy.php" class="text-content">Shipping Policy</a>
                             </li>
                             <li>
@@ -112,12 +115,14 @@
 
                     <div class="footer-contact">
                         <ul>
-                        <li>
+                            <li>
                                 <div class="footer-number">
                                     <i data-feather="phone"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Hotline 24/7 :</h6>
-                                        <h5><a href="tel:<?=givedata($conn,"company_master","id","1","contact_no1")?>"><?=givedata($conn,"company_master","id","1","contact_no1")?></a></h5>
+                                        <h5><a
+                                                href="tel:<?= givedata($conn, "company_master", "id", "1", "contact_no1") ?>"><?= givedata($conn, "company_master", "id", "1", "contact_no1") ?></a>
+                                        </h5>
                                     </div>
                                 </div>
                             </li>
@@ -127,7 +132,9 @@
                                     <i data-feather="mail"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Email Address :</h6>
-                                        <h5><a href="mailto:<?=givedata($conn,"company_master","id","1","email")?>"><?=givedata($conn,"company_master","id","1","email")?></a></h5>
+                                        <h5><a
+                                                href="mailto:<?= givedata($conn, "company_master", "id", "1", "email") ?>"><?= givedata($conn, "company_master", "id", "1", "email") ?></a>
+                                        </h5>
                                     </div>
                                 </div>
                             </li>
@@ -159,34 +166,35 @@
                 <h6 class="text-content">©2024 Waves Packaging All rights reserved</h6>
             </div>
 
-            <div class="payment" style="display: flex; justify-content: center; align-items: center; font-size: 2.5rem; margin-top: 20px;">
-            <img src="assets/images/icon/i-2.png" style="width: 70px; height: 70px; object-fit: contain; ">
-    <img src="assets/images/icon/i-1.png" style="width: 70px; height: 70px; object-fit: contain; ">
-    <img src="assets/images/icon/i-3.png" style="width: 70px; height: 70px; object-fit: contain; ">
-   
-</div>
+            <div class="payment"
+                style="display: flex; justify-content: center; align-items: center; font-size: 2.5rem; margin-top: 20px;">
+                <img src="assets/images/icon/i-2.png" style="width: 70px; height: 70px; object-fit: contain; ">
+                <img src="assets/images/icon/i-1.png" style="width: 70px; height: 70px; object-fit: contain; ">
+                <img src="assets/images/icon/i-3.png" style="width: 70px; height: 70px; object-fit: contain; ">
+
+            </div>
 
 
             <div class="social-link">
                 <h6 class="text-content">Stay connected :</h6>
                 <ul>
-                <li>
-                        <a href="<?=givedata($conn,"company_master","id","1","fb_link")?>" target="_blank">
+                    <li>
+                        <a href="<?= givedata($conn, "company_master", "id", "1", "fb_link") ?>" target="_blank">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="<?=givedata($conn,"company_master","id","1","twitter_link")?>" target="_blank">
-                            <i class="fa-brands fa-twitter" ></i>
+                        <a href="<?= givedata($conn, "company_master", "id", "1", "twitter_link") ?>" target="_blank">
+                            <i class="fa-brands fa-twitter"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="<?=givedata($conn,"company_master","id","1","instagram_link")?>" target="_blank">
+                        <a href="<?= givedata($conn, "company_master", "id", "1", "instagram_link") ?>" target="_blank">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="<?=givedata($conn,"company_master","id","1","other_link")?>" target="_blank">
+                        <a href="<?= givedata($conn, "company_master", "id", "1", "other_link") ?>" target="_blank">
                             <i class="fa-brands fa-pinterest-p"></i>
                         </a>
                     </li>
@@ -210,8 +218,9 @@
                 <div class="row g-sm-4 g-2">
                     <div class="col-lg-6">
                         <div class="slider-image">
-                            <img src="assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload"
-                                alt="">
+                           
+                            <img src="assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload" alt="">
+
                         </div>
                     </div>
 
@@ -295,6 +304,82 @@
                         </div>
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade theme-modal view-modal" id="LOGIN_view" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+        <div class="modal-content">
+            <div class="modal-header p-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-sm-4 g-2">
+                    <div class="col-lg-6">
+                        <div class="slider-image">
+                           <img src="assets/images/inner-page/log-in.png" class="img-fluid blur-up lazyload" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mx-auto" >
+                    <div class="log-in-box">
+                        <div class="log-in-title">
+                            <h3>Welcome To Waves Packaging</h3>
+                           <br>
+                        </div>
+
+                        <div class="input-box">
+                            <form class="row g-4" id="formId">
+                                <div class="col-12">
+                                    <div class="form-floating theme-form-floating log-in-form">
+                                        <input type="email" class="form-control" id="email" name="username" placeholder="Email Address">
+                                        <label for="email">Email Address</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating theme-form-floating log-in-form">
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Password">
+                                        <label for="password">Password</label>
+                                    </div>
+                                    <span id="login_responce"></span>
+                                </div>
+                               
+
+                                <div class="col-12">
+                                    <div class="forgot-box">
+                                       
+                                        <a href="forgot.html" class="forgot-password">Forgot Password?</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-animation w-100 justify-content-center" id="submitButton_INDEX" type="submit">Log
+                                        In</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        
+
+                        <div class="other-log-in">
+                            <h6></h6><br>
+                        </div>
+
+                        <div class="sign-up-box">
+                            <h4>Don't have an account?</h4>
+                            <a href="SIGN-UP">Sign Up</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -401,7 +486,7 @@
 </div>
 <!-- Location Modal End -->
 
-<!-- Cookie Bar Box Start -->
+<!-- Cookie Bar Box Start 
 <div class="cookie-bar-box">
     <div class="cookie-box">
         <div class="cookie-image">
@@ -419,7 +504,7 @@
         <button class="btn ok-button">OK</button>
     </div>
 </div>
-<!-- Cookie Bar Box End -->
+ Cookie Bar Box End -->
 
 <!-- Deal Box Modal Start -->
 <div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1">
@@ -440,8 +525,7 @@
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="assets/images/vegetable/product/10.png" class="blur-up lazyload"
-                                        alt="">
+                                    <img src="assets/images/vegetable/product/10.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -454,8 +538,7 @@
                         <li class="list-2">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="assets/images/vegetable/product/11.png" class="blur-up lazyload"
-                                        alt="">
+                                    <img src="assets/images/vegetable/product/11.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -468,8 +551,7 @@
                         <li class="list-3">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="assets/images/vegetable/product/12.png" class="blur-up lazyload"
-                                        alt="">
+                                    <img src="assets/images/vegetable/product/12.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -482,8 +564,7 @@
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="assets/images/vegetable/product/13.png" class="blur-up lazyload"
-                                        alt="">
+                                    <img src="assets/images/vegetable/product/13.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -502,7 +583,7 @@
 
 <!-- Tap to top and theme setting button start -->
 <div class="theme-option">
-    
+
 
     <div class="back-to-top">
         <a id="back-to-top" href="#">
@@ -560,3 +641,45 @@
 
 <!-- theme setting js -->
 <script src="assets/js/theme-setting.js"></script>
+
+<script>
+         $(document).ready(function () {
+            $("#submitButton_INDEX").click(function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                let form = $("#formId");
+                let url = "SIGN-IN/signin_form.php";
+
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: form.serialize(), // Serialize form data
+                    success: function (data) {
+                        console.log('my message' + data);
+                        let mydata =  data.split("__AJAX-");
+                        var word = ""+mydata[1];
+                       let ans = ""+word.localeCompare("Done ");
+                       let ans_ = ""+word.localeCompare("Done-1 ");
+                        if (ans == 0) {
+
+                            document.getElementById("login_responce").innerHTML = "<span style='color:green'>Login Done</span>";
+                            location.reload();
+
+                          
+
+                        }else if(ans_ == 0){
+                            document.getElementById("login_responce").innerHTML = "<span style='color:orange'>Account is not activated</span>";
+
+                        }else{
+                            document.getElementById("login_responce").innerHTML = "<span style='color:red'>Entered credentials are invalid</span>";
+
+                        }
+                    },
+                    error: function (data) {
+                        alert("Error occurred while submitting the form");
+                    }
+                });
+            });
+        });
+
+    </script>

@@ -84,22 +84,22 @@
                     <div class="footer-contain">
                         <ul>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Hot Food Packaging</a>
+                                <a href="#" class="text-content">Hot Food Packaging</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Cold Food Packaging</a>
+                                <a href="#" class="text-content">Cold Food Packaging</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Drinking Cups</a>
+                                <a href="#" class="text-content">Drinking Cups</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Bags & Sheets</a>
+                                <a href="#" class="text-content">Bags & Sheets</a>
                             </li>
                             <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Cutlery & Nackins</a>
+                                <a href="#" class="text-content">Cutlery & Nackins</a>
                             </li>
                             <!-- <li>
-                                <a href="shop-left-sidebar.php" class="text-content">Branded</a>
+                                <a href="#" class="text-content">Branded</a>
                             </li> -->
                         </ul>
                     </div>
@@ -134,16 +134,16 @@
                     <div class="footer-contain">
                         <ul>
                         <li>
-                                <a href="shipping-policy.php" class="text-content">Shipping Policy</a>
+                                <a href="../shipping-policy.php" class="text-content">Shipping Policy</a>
                             </li>
                             <li>
-                                <a href="privacy-policy.php" class="text-content">Privacy Policy</a>
+                                <a href="../privacy-policy.php" class="text-content">Privacy Policy</a>
                             </li>
                             <li>
-                                <a href="refund-policy.php" class="text-content">Refund Policy</a>
+                                <a href="../refund-policy.php" class="text-content">Refund Policy</a>
                             </li>
                             <li>
-                                <a href="terms-of-services.php" class="text-content">Terms & Conditions</a>
+                                <a href="../terms-of-services.php" class="text-content">Terms & Conditions</a>
                             </li>
                             <li>
                                 <a href="#" class="text-content">FAQ</a>
@@ -449,7 +449,7 @@
 </div>
 <!-- Location Modal End -->
 
-<!-- Cookie Bar Box Start -->
+<!-- Cookie Bar Box Start 
 <div class="cookie-bar-box">
     <div class="cookie-box">
         <div class="cookie-image">
@@ -467,7 +467,7 @@
         <button class="btn ok-button">OK</button>
     </div>
 </div>
-<!-- Cookie Bar Box End -->
+ Cookie Bar Box End -->
 
 <!-- Deal Box Modal Start -->
 <div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1">
