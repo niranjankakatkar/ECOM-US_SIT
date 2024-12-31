@@ -181,10 +181,8 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <?php
+                                     
                                         
-                                        if($_SESSION['tokenID']!=""){
-                                            ?>
                                     <li class="right-side">
                                         <a href="WISHLIST" class="btn p-0 position-relative header-wishlist">
                                             <i data-feather="heart"></i>
@@ -254,7 +252,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <?php } ?>
+                                    
                                     <li class="right-side onhover-dropdown">
                                         <?php
                                         
