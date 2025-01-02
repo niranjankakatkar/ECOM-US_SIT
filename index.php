@@ -1,6 +1,13 @@
 <?php include 'niru_collection.php';?> 
 <?php include 'header.php';?> 
 
+<?php
+if($_SESSION['guesst_login']==""){
+    $_SESSION['guesst_login_KEY']=''.generateRandomString(30);
+}
+
+?>
+
 <!-- CSS for Styling -->
 <style>
     .slider-container {
