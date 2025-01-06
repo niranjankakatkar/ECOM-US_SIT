@@ -24,14 +24,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	$category_id=givedata($conn,"sub_category","id", $sub_category_id,"category_id");
 	$flag="1";
 	$key_=generateRandomString(20);
-	/*
-	$image=$_FILES['category_img']['name']; 
+	
+	$image=$_FILES['product_img']['name']; 
 			 $imageArr=explode('.',$image); //first index is file name and second index file type
 			 $rand=rand(100000,999999);
 			 $newImageName=$rand.'.'.$imageArr[1];
-			 $uploadPath="../uploads/category/".$newImageName;
-			 $isUploaded=move_uploaded_file($_FILES["category_img"]["tmp_name"],$uploadPath);*/
-  $uploadPath="";
+			 $uploadPath="../uploads/products/".$newImageName;
+			 $isUploaded=move_uploaded_file($_FILES["product_img"]["tmp_name"],$uploadPath);
+ 
 	if($url_id=="")
 	{
 		$sql="INSERT INTO products(product_title,description,retail_rate,wholsell_rate,hoteling_rate,shop_rate,retail_qty,wholsell_qty,hoteling_qty,shop_qty,color,dimensions,category_id,sub_category_id,filepath,flag,prep_by,key_) VALUES('$product_title','$description','$retail_rate','$wholsell_rate','$hoteling_rate','$shop_rate','$retail_qty','$wholsell_qty','$hoteling_qty','$shop_qty','$color','$dimensions','$category_id','$sub_category_id','$uploadPath','$flag','$prep_by','$key_')";
@@ -126,13 +126,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 								<div class="card-body">
 									<div class="row ec-vendor-uploads">
-									
+									<form class="row c-vendor-uploads"  enctype="multipart/form-data"  method="POST">
 											<div class="col-lg-4">
 												<div class="ec-vendor-img-upload">
 													<div class="ec-vendor-main-img">
 														<div class="avatar-upload">
 															<div class="avatar-edit">
-																<input type='file' id="main_img" class="ec-image-upload"
+																<input type='file' id="main_img" name="product_img" class="ec-image-upload"
 																	accept=".png, .jpg, .jpeg" />
 																<label for="imageUpload"><img
 																		src="../assets/img/icons/edit.svg"
@@ -146,116 +146,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 																</div>
 															</div>
 														</div>
-														<div class="thumb-upload-set colo-md-12">
-															<div class="thumb-upload">
-																<div class="thumb-edit">
-																	<input type='file' id="thumbUpload01"
-																		class="ec-image-upload"
-																		accept=".png, .jpg, .jpeg" />
-																	<label for="imageUpload"><img
-																			src="../assets/img/icons/edit.svg"
-																			class="svg_img header_svg" alt="edit" /></label>
-																</div>
-																<div class="thumb-preview ec-preview">
-																	<div class="image-thumb-preview">
-																		<img class="image-thumb-preview ec-image-preview"
-																			src="../assets/img/products/vender-upload-thumb-preview.jpg"
-																			alt="edit" />
-																	</div>
-																</div>
-															</div>
-															<div class="thumb-upload">
-																<div class="thumb-edit">
-																	<input type='file' id="thumbUpload02"
-																		class="ec-image-upload"
-																		accept=".png, .jpg, .jpeg" />
-																	<label for="imageUpload"><img
-																			src="../assets/img/icons/edit.svg"
-																			class="svg_img header_svg" alt="edit" /></label>
-																</div>
-																<div class="thumb-preview ec-preview">
-																	<div class="image-thumb-preview">
-																		<img class="image-thumb-preview ec-image-preview"
-																			src="../assets/img/products/vender-upload-thumb-preview.jpg"
-																			alt="edit" />
-																	</div>
-																</div>
-															</div>
-															<div class="thumb-upload">
-																<div class="thumb-edit">
-																	<input type='file' id="thumbUpload03"
-																		class="ec-image-upload"
-																		accept=".png, .jpg, .jpeg" />
-																	<label for="imageUpload"><img
-																			src="../assets/img/icons/edit.svg"
-																			class="svg_img header_svg" alt="edit" /></label>
-																</div>
-																<div class="thumb-preview ec-preview">
-																	<div class="image-thumb-preview">
-																		<img class="image-thumb-preview ec-image-preview"
-																			src="../assets/img/products/vender-upload-thumb-preview.jpg"
-																			alt="edit" />
-																	</div>
-																</div>
-															</div>
-															<div class="thumb-upload">
-																<div class="thumb-edit">
-																	<input type='file' id="thumbUpload04"
-																		class="ec-image-upload"
-																		accept=".png, .jpg, .jpeg" />
-																	<label for="imageUpload"><img
-																			src="../assets/img/icons/edit.svg"
-																			class="svg_img header_svg" alt="edit" /></label>
-																</div>
-																<div class="thumb-preview ec-preview">
-																	<div class="image-thumb-preview">
-																		<img class="image-thumb-preview ec-image-preview"
-																			src="../assets/img/products/vender-upload-thumb-preview.jpg"
-																			alt="edit" />
-																	</div>
-																</div>
-															</div>
-															<div class="thumb-upload">
-																<div class="thumb-edit">
-																	<input type='file' id="thumbUpload05"
-																		class="ec-image-upload"
-																		accept=".png, .jpg, .jpeg" />
-																	<label for="imageUpload"><img
-																			src="../assets/img/icons/edit.svg"
-																			class="svg_img header_svg" alt="edit" /></label>
-																</div>
-																<div class="thumb-preview ec-preview">
-																	<div class="image-thumb-preview">
-																		<img class="image-thumb-preview ec-image-preview"
-																			src="../assets/img/products/vender-upload-thumb-preview.jpg"
-																			alt="edit" />
-																	</div>
-																</div>
-															</div>
-															<div class="thumb-upload">
-																<div class="thumb-edit">
-																	<input type='file' id="thumbUpload06"
-																		class="ec-image-upload"
-																		accept=".png, .jpg, .jpeg" />
-																	<label for="imageUpload"><img
-																			src="../assets/img/icons/edit.svg"
-																			class="svg_img header_svg" alt="edit" /></label>
-																</div>
-																<div class="thumb-preview ec-preview">
-																	<div class="image-thumb-preview">
-																		<img class="image-thumb-preview ec-image-preview"
-																			src="../assets/img/products/vender-upload-thumb-preview.jpg"
-																			alt="edit" />
-																	</div>
-																</div>
-															</div>
-														</div>
+													
 													</div>
 												</div>
 											</div>
 											<div class="col-lg-8">
-												<div class="ec-vendor-upload-detail">
-													<form class="row g-3" enctype="multipart/form-data"  method="POST">
+												<div class="row ec-vendor-upload-detail">
+													
 														<div class="col-md-6">
 															<label for="product_name" class="form-label">Product name</label>
 															<input type="text" class="form-control slug-title" id="product_title" name="product_title">
@@ -283,7 +180,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 																</optgroup>
 																
 															</select>
-														</div>
+														</div><br>
 														<div class="col-md-12">
 															<label for="slug" class="col-12 col-form-label">Slug</label> 
 															<div class="col-12">
@@ -291,61 +188,62 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 															</div>
 														</div>
 														<div class="col-md-12">
+														<br>
 															<label class="form-label">Sort Description</label>
 															<textarea class="form-control" rows="2"></textarea>
 														</div>
-														<div class="col-md-4 mb-25">
+														<div class="col-md-4 mb-25"><br>
 															<label class="form-label">Colors</label>
 															<input type="color" class="form-control form-control-color"
 																id="color" name="color" value="#ff6191"
 																title="Choose your color">
 															
 														</div>
-														<div class="col-md-8 mb-25">
+														<div class="col-md-8 mb-25"><br>
 															<label class="form-label">Dimensions</label>
 															<input type="text" class="form-control slug-title" id="dimensions" name="dimensions">
-														</div>
-														<div class="col-md-6">
+														</div><br>
+														<div class="col-md-6"><br>
 															<label class="form-label">Reatiler Price <span>( In USD
 																	)</span></label>
 															<input type="number" class="form-control" id="retail_rate" name="retail_rate">
 														</div>
-														<div class="col-md-6">
+														<div class="col-md-6"><br>
 															<label class="form-label">Reatiler Min Quantity</label>
 															<input type="number" class="form-control" id="retail_qty" name="retail_qty">
 														</div>
-														<div class="col-md-6">
+														<div class="col-md-6"><br>
 															<label class="form-label">Wholseller Price <span>( In USD
 																	)</span></label>
 															<input type="number" class="form-control" id="wholsell_rate" name="wholsell_rate">
 														</div>
-														<div class="col-md-6">
+														<div class="col-md-6"><br>
 															<label class="form-label">Wholseller Min Quantity</label>
 															<input type="number" class="form-control" id="wholsell_qty" name="wholsell_qty">
 														</div>
-														<div class="col-md-6">
+														<div class="col-md-6"><br>
 															<label class="form-label">Hoteling Price <span>( In USD
 																	)</span></label>
 															<input type="number" class="form-control" id="hoteling_rate" name="hoteling_rate">
 														</div>
-														<div class="col-md-6">
+														<div class="col-md-6"><br>
 															<label class="form-label">Hoteling Min Quantity</label>
 															<input type="number" class="form-control" id="hoteling_qty" name="hoteling_qty">
 														</div>
-														<div class="col-md-6">
+														<div class="col-md-6"><br>
 															<label class="form-label">Shop Price <span>( In USD
 																	)</span></label>
 															<input type="number" class="form-control" id="shop_rate" name="shop_rate">
 														</div>
-														<div class="col-md-6">
+														<div class="col-md-6"><br>
 															<label class="form-label">Shop Min Quantity</label>
 															<input type="number" class="form-control" id="shop_qty" name="shop_qrt">
 														</div>
-														<div class="col-md-12">
+														<div class="col-md-12"><br>
 															<label class="form-label">Full Detail</label>
 															<textarea class="form-control" rows="4" name="description"></textarea>
 														</div>
-														<div class="col-md-12">
+														<div class="col-md-12"><br>
 															<label class="form-label">Product Tags <span>( Type and
 																	make comma to separate tags )</span></label>
 															<input type="text" class="form-control" id="group_tag"
@@ -355,10 +253,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 														<div class="col-md-12">
 															<button type="submit" class="btn btn-primary">Submit</button>
 														</div>
-													</form>
+													
 												</div>
 											</div>
-											
+											</form>
 									</div>
 								</div>
 							</div>

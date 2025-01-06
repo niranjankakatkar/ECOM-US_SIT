@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                         </div>
 
                         <div class="input-box">
-                            <form class="row g-4" id="formId">
+                            <form class="row g-4" id="formId" onsubmit="return validation();">
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating log-in-form">
                                         <input type="email" class="form-control" id="email" name="username" placeholder="Email Address">
@@ -125,9 +125,42 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     <?php include '../inner_footer.php';?> 
 
     <script>
+
+function validation(){
+            var email=$("#email").val();
+            var password=$("#password").val();
+
+            $("#email").removeClass('bordererror');
+            $("#password").removeClass('bordererror');
+             
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            if (!filter.test(email)) {
+            $("#email").val('');
+            error = "Please enter the email";
+            $("#email").focus();
+            $("#email").addClass('bordererror');
+            $("#email").attr("placeholder",error);
+            
+            return false;
+        }
+        if (password === "" || !filter.test(password)) {
+            $("#password").val('');
+            error = "Please enter the password";
+            $("#password").focus();
+            $("#password").addClass('bordererror');
+            $("#password").attr("placeholder",error);
+            return false;
+        }
+
+        }
          $(document).ready(function () {
             $("#submitButton").click(function (event) {
                 event.preventDefault(); // Prevent default form submission
+
+                if (!validation()) {
+                return; // Stop submission if validation fails
+            }
 
                 let form = $("#formId");
                 let url = "signin_form.php";

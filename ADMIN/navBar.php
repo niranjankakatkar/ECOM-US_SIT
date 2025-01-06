@@ -51,7 +51,7 @@ if($_SESSION['loginID']=="")
                                    
 
                                     <li class="">
-                                        <a class="sidenav-item-link" href="#">
+                                        <a class="sidenav-item-link" href="../USERS">
                                             <span class="nav-text">Retailers List</span>
                                         </a>
                                     </li>
@@ -71,7 +71,7 @@ if($_SESSION['loginID']=="")
                                     
                                     <li class="">
                                         <a class="sidenav-item-link" href="../OtherUsers/?id=1">
-                                            <span class="nav-text">OtherUsers</span>
+                                            <span class="nav-text">Wholseller</span>
                                         </a>
                                     </li>
                                     <li class="">

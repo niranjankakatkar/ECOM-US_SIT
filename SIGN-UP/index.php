@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="input-box">
-                            <form class="row g-4" id="formId" >
+                            <form class="row g-4" id="formId" onsubmit="return validation();">
                                 <div class="col-12" >
                                     <div class="form-floating theme-form-floating">
                                         <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name">
@@ -198,9 +198,60 @@
     <?php include '../inner_footer.php';?> 
 
     <script>
+ function validation(){
+            var full_name=$("#full_name").val();
+            var email=$("#email").val();
+            var mobile_no=$("#mobile_no").val();
+            var password=$("#password").val();
+
+            $("#full_name").removeClass('bordererror');
+            $("#email").removeClass('bordererror');
+            $("#mobile_no").removeClass('bordererror');
+            $("#password").removeClass('bordererror');
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            if(full_name ==""){
+            $("#full_name").focus();
+            error ="Please enter full name";
+            $("#full_name").val('');
+            $("#full_name").addClass('bordererror');
+            $("#full_name").attr("placeholder", error);
+            return false;
+            }
+            if (email === "" || !filter.test(email)) {
+            $("#email").val('');
+            error = "Please enter the email";
+            $("#email").focus();
+            $("#email").addClass('bordererror');
+            $("#email").attr("placeholder",error);
+            return false;
+        }
+        if (mobile_no == "" || mobile_no.length != 10 || isNaN(mobile_no)) {
+            $("#mobile_no").val('');
+            error = "Please enter the Phone";
+            $("#mobile_no").focus();
+            $("#mobile_no").addClass('bordererror');
+            $("#mobile_no").attr("placeholder",error);
+            return false;
+        }
+        else if(password ===""){
+            $("#password").focus();
+            error ="Please enter password";
+            $("#password").val('');
+            $("#password").addClass('bordererror');
+            $("#password").attr("placeholder", error);
+            return false;
+            }
+            return true;
+        }
+        
         $(document).ready(function () {
             $("#submitButton").click(function (event) {
                 event.preventDefault(); // Prevent default form submission
+
+                if (!validation()) {
+                return; // Stop submission if validation fails
+            }
 
                 let form = $("#formId");
                 let url = "signup_form.php";

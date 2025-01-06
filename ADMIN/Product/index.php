@@ -91,7 +91,7 @@ include '../../niru_collection.php';
 											$timepstamp=date_create("".$timepstamp);
 			  								 ?>
 												<tr>
-													<td><img class="tbl-thumb" src="../assets/img/products/p1.jpg" alt="Product Image" /></td>
+													<td><img class="tbl-thumb" src="<?=$row['filepath']?>" alt="Product Image" /></td>
 													<td><?=$row['product_title']?></td>
 													<td>Retailer: <?=$row['retail_rate']?><br>
 													Wholseller: <?=$row['wholsell_rate']?><br>

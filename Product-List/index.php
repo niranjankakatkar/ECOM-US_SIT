@@ -294,8 +294,8 @@ $cat_id=givedata($conn,"category","key_",$_GET['id'],"id");
                             <div class="product-box-3 h-100 wow fadeInUp">
                                 <div class="product-header">
                                     <div class="product-image">
-                                        <a href="product-left-thumbnail.html">
-                                            <img src="../assets/images/cake/product/6.jpg"
+                                        <a href="details.php">
+                                            <img src="../ADMIN//<?=$row['filepath']?>"
                                                 class="img-fluid blur-up lazyload" alt="">
                                         </a>
 
@@ -305,7 +305,7 @@ $cat_id=givedata($conn,"category","key_",$_GET['id'],"id");
                                 <div class="product-footer">
                                     <div class="product-detail">
                                         <span class="span-name"><?=givedata($conn,"category","key_",$_GET['id'],"category_title");?></span>
-                                        <a href="product-left-thumbnail.html">
+                                        <a href="details.php">
                                             <h5 class="name"><?=$row['product_title']?></h5>
                                         </a>
                                         <p class="text-content mt-1 mb-2 product-content">asdasd<?=$row['description']?></p>

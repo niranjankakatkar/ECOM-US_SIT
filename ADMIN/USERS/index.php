@@ -3,9 +3,8 @@
 <?php
 include '../../niru_collection.php';
 
-$user_type="";
-if($_GET['id']==1){ $user_type='Wholesaler';} else if($_GET['id']==2){$user_type='Mega Restaurant';} else if($_GET['id']==3){$user_type='Shopkeeper';}
-                                ?>
+$user_type="Retailer";
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
