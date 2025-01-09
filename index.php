@@ -2,7 +2,7 @@
 <?php include 'header.php';?> 
 
 <?php
-if($_SESSION['guesst_login']==""){
+if($_SESSION['guesst_login_KEY']==""){
     $_SESSION['guesst_login_KEY']=''.generateRandomString(30);
 }
 
