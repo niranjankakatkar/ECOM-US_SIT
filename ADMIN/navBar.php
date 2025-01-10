@@ -71,7 +71,7 @@ if($_SESSION['loginID']=="")
                                     
                                     <li class="">
                                         <a class="sidenav-item-link" href="../OtherUsers/?id=1">
-                                            <span class="nav-text">Wholseller</span>
+                                            <span class="nav-text">Wholeseller</span>
                                         </a>
                                     </li>
                                     <li class="">
@@ -202,6 +202,27 @@ if($_SESSION['loginID']=="")
                                 <span class="nav-text">Contact Us Data</span>
                             </a>
                         </li>
+
+                             <!-- Coupon -->
+
+                             <li class="has-sub">
+                            <a class="sidenav-item-link" href="javascript:void(0)">
+                                <i class="mdi mdi-palette-advanced"></i>
+                                <span class="nav-text">Coupon</span> <b class="caret"></b>
+                            </a>
+                            <div class="collapse">
+                                <ul class="sub-menu" id="coupon" data-parent="#sidebar-menu">
+                                    <li class="">
+                                        <a class="sidenav-item-link" href="../Coupon/add_coupon.php">
+                                            <span class="nav-text">Add Coupon</span>
+                                        </a>
+                                    </li>
+                                   
+                                   
+                                </ul>
+                            </div>
+                        </li>
+
 
                         <!-- Brands -->
                         <li>
