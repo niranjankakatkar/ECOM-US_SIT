@@ -115,17 +115,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 								<div class="card-body">
 									<div class="row ec-vendor-uploads">
-									<form class="row c-vendor-uploads"  enctype="multipart/form-data"  method="POST">
+									<form class="row c-vendor-uploads  needs-validation"  enctype="multipart/form-data"  method="POST">
 											<div class="col-lg-4">
 												<div class="ec-vendor-img-upload">
 													<div class="ec-vendor-main-img">
 														<div class="avatar-upload">
 															<div class="avatar-edit">
 																<input type='file' id="main_img" name="filepath" class="ec-image-upload"
-																	accept=".png, .jpg, .jpeg" />
-																<label for="imageUpload"><img
+																	accept=".png, .jpg, .jpeg" required/>
+																	<div class="invalid-feedback">Please upload a valid image
+																	(JPEG/PNG).</div>
+																<!-- <label for="imageUpload"><img
 																		src="../assets/img/icons/edit.svg"
-																		class="svg_img header_svg" alt="edit" /></label>
+																		class="svg_img header_svg" alt="edit" /></label> -->
 															</div>
 															<div class="avatar-preview ec-preview">
 																<div class="imagePreview ec-div-preview">
@@ -144,12 +146,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 													
 														<div class="col-md-6">
 															<label for="product_name" class="form-label">Banner Title</label>
-															<input type="text" class="form-control slug-title" id="title" name="title" value="<?=givedata($conn,"banner_master","id",$url_id,"title");?>">
+															<input type="text" class="form-control slug-title" id="title" name="title" value="<?=givedata($conn,"banner_master","id",$url_id,"title");?>" required>
+															<div class="invalid-feedback">Please provide a valid Banner Title.</div>
 														</div>
                                                         <div class="col-md-6">
                                                         
 															<label for="product_name" class="form-label">Banner Discount</label>
-															<input type="text" class="form-control slug-title" id="discount_title" name="discount_title" value="<?=givedata($conn,"banner_master","id",$url_id,"discount_title");?>">
+															<input type="text" class="form-control slug-title" id="discount_title" name="discount_title" value="<?=givedata($conn,"banner_master","id",$url_id,"discount_title");?>" required>
+															<div class="invalid-feedback">Please provide a valid Banner Discount.</div>
 														</div>
 														
 														<div class="col-md-12">
@@ -203,6 +207,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 	<!-- Ekka Custom -->
 	<script src="../assets/js/ekka.js"></script>
+
+	<script>
+  (function () {
+    const form = document.querySelector(".needs-validation");
+
+    form.addEventListener("submit", function (event) {
+      // Prevent submission if the form is invalid
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      // Apply Bootstrap's 'was-validated' class for styling
+      form.classList.add("was-validated");
+    }, false);
+  })();
+</script>
+
 </body>
 
 

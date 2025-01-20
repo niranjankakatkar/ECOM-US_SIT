@@ -1,10 +1,10 @@
 <?php
 include '../../niru_collection.php';
 
-
+$url_id=$_GET["id"];
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-	$url_id=$_GET["id"];
+	
 
 	$prep_by = "ADMIN";//$_SESSION['token'];
 	$product_title=$_POST['product_title'];
@@ -18,21 +18,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	$hoteling_qty=$_POST['hoteling_qty'];
 	$shop_qty=$_POST['shop_qty'];
 	$color=$_POST['color'];
+	$urlid=$_POST['urlid'];
 	$dimensions=$_POST['dimensions'];
 	
 	$sub_category_id=$_POST['sub_category_id'];
 	$category_id=givedata($conn,"sub_category","id", $sub_category_id,"category_id");
-	$flag="1";
+	$flag=$_POST['flag'];
 	$key_=generateRandomString(20);
+	$filepath=givedata($conn,"products","id", $urlid,"filepath");
+	$uploadPath="";
 	
-	$image=$_FILES['product_img']['name']; 
+
+			$image=$_FILES['product_img']['name']; 
 			 $imageArr=explode('.',$image); //first index is file name and second index file type
 			 $rand=rand(100000,999999);
 			 $newImageName=$rand.'.'.$imageArr[1];
 			 $uploadPath="../uploads/products/".$newImageName;
 			 $isUploaded=move_uploaded_file($_FILES["product_img"]["tmp_name"],$uploadPath);
+	
  
-	if($url_id=="")
+	if($urlid=="")
 	{
 		$sql="INSERT INTO products(product_title,description,retail_rate,wholsell_rate,hoteling_rate,shop_rate,retail_qty,wholsell_qty,hoteling_qty,shop_qty,color,dimensions,category_id,sub_category_id,filepath,flag,prep_by,key_) VALUES('$product_title','$description','$retail_rate','$wholsell_rate','$hoteling_rate','$shop_rate','$retail_qty','$wholsell_qty','$hoteling_qty','$shop_qty','$color','$dimensions','$category_id','$sub_category_id','$uploadPath','$flag','$prep_by','$key_')";
 		if($conn->query($sql))
@@ -43,11 +48,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		  <?php
 		}
 	}else{
-		$sql="UPDATE products set product_title='$product_title',description='$description',filepath='$uploadPath',flag='$flag' where id='$url_id'";
+		$sql="UPDATE products set product_title='$product_title',description='$description',filepath='$uploadPath',flag='$flag' where id='$urlid'";
 		if($conn->query($sql))
         {
             ?>
-			    <script> window.location.href="../Category/"; </script>
+			   
 		    <?php
         }
 	}										
@@ -126,13 +131,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 								<div class="card-body">
 									<div class="row ec-vendor-uploads">
-									<form class="row c-vendor-uploads"  enctype="multipart/form-data"  method="POST">
-											<div class="col-lg-4">
+									<form method="POST" class="row c-vender-uploads needs-validation" enctype="multipart/form-data" novalidate>
+	<input type="hidden" value="<?=givedata($conn,"products","key_",$url_id,"id")?>" name="urlid" id="urlid">
+									<div class="col-lg-4">
 												<div class="ec-vendor-img-upload">
 													<div class="ec-vendor-main-img">
 														<div class="avatar-upload">
 															<div class="avatar-edit">
-																<input type='file' id="main_img" name="product_img" class="ec-image-upload"
+															<?php
+																	$filepath=givedata($conn,"products","key_",$url_id,"filepath");
+
+																		if($filepath==""){
+																			
+																		$filepath="../assets/img/products/vender-upload-preview.jpg";
+																			
+																		}
+																	?>
+																<input type='file' value="<?=$filepath?>" id="main_img" name="product_img" class="ec-image-upload"
 																	accept=".png, .jpg, .jpeg" />
 																<label for="imageUpload"><img
 																		src="../assets/img/icons/edit.svg"
@@ -140,8 +155,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 															</div>
 															<div class="avatar-preview ec-preview">
 																<div class="imagePreview ec-div-preview">
+																	
 																	<img class="ec-image-preview"
-																		src="../assets/img/products/vender-upload-preview.jpg"
+																		src="<?=$filepath?>"
 																		alt="edit" />
 																</div>
 															</div>
@@ -150,17 +166,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 													</div>
 												</div>
 											</div>
+											
 											<div class="col-lg-8">
 												<div class="row ec-vendor-upload-detail">
 													
 														<div class="col-md-6">
 															<label for="product_name" class="form-label">Product name</label>
-															<input type="text" class="form-control slug-title" id="product_title" name="product_title">
+															<input type="text" class="form-control slug-title" id="product_title" name="product_title" value="<?=givedata($conn,"products","key_",$url_id,"product_title")?>" required>
+															<div class="invalid-feedback">Please provide a valid product name.</div>
 														</div>
 														<div class="col-md-6">
 															<label class="form-label">Select Categories</label>
-															<select name="sub_category_id" id="sub_category_id" class="form-select">
+															<select name="sub_category_id" id="sub_category_id" class="form-select" required>
 																<?php
+																if($url_id!="")
+																{
+																	$sub_category_id=givedata($conn,"products","key_",$url_id,"sub_category_id");
+
+																			?>
+																				<option value="<?=$sub_category_id?>"><?=givedata($conn,"sub_category","id",$sub_category_id,"sub_category_title")?></option>
+																			<?php
+																}
 																	$sql = "SELECT * FROM category where flag='1'";
 																	$result = mysqli_query($conn, $sql);
 																	while($row = mysqli_fetch_assoc($result)) {
@@ -180,64 +206,75 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 																</optgroup>
 																
 															</select>
+															<div class="invalid-feedback">Please select a Select Categories.</div>
 														</div><br>
 														<div class="col-md-12">
 															<label for="slug" class="col-12 col-form-label">Slug</label> 
 															<div class="col-12">
-																<input id="slug" name="slug" class="form-control here set-slug" type="text">
+																<input id="slug" name="slug" class="form-control here set-slug" type="text" value="<?=givedata($conn,"products","key_",$url_id,"product_title")?>" required>
+																<div class="invalid-feedback">Please provide a valid slug.</div>
 															</div>
 														</div>
 														<div class="col-md-12">
 														<br>
 															<label class="form-label">Sort Description</label>
-															<textarea class="form-control" rows="2"></textarea>
+															<textarea class="form-control" rows="2"><?=givedata($conn,"products","key_",$url_id,"description")?></textarea>
 														</div>
 														<div class="col-md-4 mb-25"><br>
 															<label class="form-label">Colors</label>
 															<input type="color" class="form-control form-control-color"
-																id="color" name="color" value="#ff6191"
-																title="Choose your color">
-															
+																id="color" name="color" value="<?=givedata($conn,"products","key_",$url_id,"color")?>"
+																title="Choose your color" required>
+																<div class="invalid-feedback">Please provide a color.</div>
 														</div>
 														<div class="col-md-8 mb-25"><br>
 															<label class="form-label">Dimensions</label>
-															<input type="text" class="form-control slug-title" id="dimensions" name="dimensions">
+															<input type="text" class="form-control slug-title" id="dimensions" name="dimensions" value="<?=givedata($conn,"products","key_",$url_id,"dimensions")?>" required>
+															<div class="invalid-feedback">Please provide a valid Dimensions.</div>
 														</div><br>
 														<div class="col-md-6"><br>
-															<label class="form-label">Reatiler Price <span>( In USD
+															<label class="form-label">Reatiler Price <span>( In POUND
 																	)</span></label>
-															<input type="number" class="form-control" id="retail_rate" name="retail_rate">
+															<input type="number" min="0" step="0.01"  class="form-control" id="retail_rate" name="retail_rate" value="<?=givedata($conn,"products","key_",$url_id,"retail_rate")?>" required>
+															<div class="invalid-feedback">Please provide a valid Retail Price.</div>
 														</div>
 														<div class="col-md-6"><br>
 															<label class="form-label">Reatiler Min Quantity</label>
-															<input type="number" class="form-control" id="retail_qty" name="retail_qty">
+															<input type="number" min="0" step="0.01" class="form-control" id="retail_qty" name="retail_qty" value="<?=givedata($conn,"products","key_",$url_id,"retail_qty")?>" required>
+															<div class="invalid-feedback">Please provide a valid Reatiler Min Quantity</div>
 														</div>
 														<div class="col-md-6"><br>
-															<label class="form-label">Wholseller Price <span>( In USD
+															<label class="form-label">Wholesaler Price <span>( In POUND
 																	)</span></label>
-															<input type="number" class="form-control" id="wholsell_rate" name="wholsell_rate">
+															<input type="number" min="0" step="0.01" class="form-control" id="wholsell_rate" name="wholsell_rate" value="<?=givedata($conn,"products","key_",$url_id,"wholsell_rate")?>" required>
+															<div class="invalid-feedback">Please provide a valid Wholesale Price.</div>
 														</div>
 														<div class="col-md-6"><br>
-															<label class="form-label">Wholseller Min Quantity</label>
-															<input type="number" class="form-control" id="wholsell_qty" name="wholsell_qty">
+															<label class="form-label">Wholesaler Min Quantity</label>
+															<input type="number" min="0" step="0.01" class="form-control" id="wholsell_qty" name="wholsell_qty" value="<?=givedata($conn,"products","key_",$url_id,"wholsell_qty")?>" required>
+															<div class="invalid-feedback">Please provide a valid Wholesaler Min Quantity.</div>
 														</div>
 														<div class="col-md-6"><br>
-															<label class="form-label">Hoteling Price <span>( In USD
+															<label class="form-label">Hoteling Price <span>( In POUND
 																	)</span></label>
-															<input type="number" class="form-control" id="hoteling_rate" name="hoteling_rate">
+															<input type="number" min="0" step="0.01" class="form-control" id="hoteling_rate" name="hoteling_rate" value="<?=givedata($conn,"products","key_",$url_id,"hoteling_rate")?>" required>
+															<div class="invalid-feedback">Please provide a valid Hoteling Price.</div>
 														</div>
 														<div class="col-md-6"><br>
 															<label class="form-label">Hoteling Min Quantity</label>
-															<input type="number" class="form-control" id="hoteling_qty" name="hoteling_qty">
+															<input type="number" min="0" step="0.01"  class="form-control" id="hoteling_qty" name="hoteling_qty" value="<?=givedata($conn,"products","key_",$url_id,"hoteling_qty")?>" required>
+															<div class="invalid-feedback">Please provide a valid Hoteling Min Quantity.</div>
 														</div>
 														<div class="col-md-6"><br>
-															<label class="form-label">Shop Price <span>( In USD
+															<label class="form-label">Shop Price <span>( In POUND
 																	)</span></label>
-															<input type="number" class="form-control" id="shop_rate" name="shop_rate">
+															<input type="number" min="0"  step="0.01" class="form-control" id="shop_rate" name="shop_rate" value="<?=givedata($conn,"products","key_",$url_id,"shop_rate")?>" required>
+															<div class="invalid-feedback">Please provide a valid Shop Price.</div>
 														</div>
 														<div class="col-md-6"><br>
 															<label class="form-label">Shop Min Quantity</label>
-															<input type="number" class="form-control" id="shop_qty" name="shop_qrt">
+															<input type="number" min="0"  step="0.01" class="form-control" id="shop_qty" name="shop_qty" value="<?=givedata($conn,"products","key_",$url_id,"shop_qty")?>" required>
+															<div class="invalid-feedback">Please provide a valid Shop Min Quantity.</div>
 														</div>
 														<div class="col-md-12"><br>
 															<label class="form-label">Full Detail</label>
@@ -248,7 +285,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 																	make comma to separate tags )</span></label>
 															<input type="text" class="form-control" id="group_tag"
 																name="group_tag" value="" placeholder=""
-																data-role="tagsinput" />
+																data-role="tagsinput" required/>
+																<div class="invalid-feedback">Please provide a valid Product Tags.</div>
+														</div>
+
+														<div class="form-group row">
+																<label class="col-12 col-form-label">Status</label>
+																<div class="col-12">
+																	<div class="form-check">
+																		<input type="radio" id="active" name="flag" value="1" class="radio-button__input">
+																		<label for="active" class="form-check-label">Active</label>
+																	</div>
+																	<div class="form-check">
+																		<input type="radio" id="inactive" name="flag" value="0" class="radio-button__input">
+																		<label for="inactive" class="form-check-label">Deactive</label>
+																	</div>
+																</div>
 														</div>
 														<div class="col-md-12">
 															<button type="submit" class="btn btn-primary">Submit</button>
@@ -291,6 +343,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 	<!-- Ekka Custom -->
 	<script src="../assets/js/ekka.js"></script>
+
+	<script>
+  (function () {
+    const form = document.querySelector(".needs-validation");
+
+    form.addEventListener("submit", function (event) {
+      // Prevent submission if the form is invalid
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      // Apply Bootstrap's 'was-validated' class for styling
+      form.classList.add("was-validated");
+    }, false);
+  })();
+</script>
+
 </body>
 
 

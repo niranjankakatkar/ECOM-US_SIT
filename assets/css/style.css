@@ -20239,7 +20239,7 @@ span {
 }
 
 .category-section-2 .category-slider .shop-category-box a.circle-1::before {
-    background-color: #fff9d8
+    background-color: #fff9d800
 }
 
 .category-section-2 .category-slider .shop-category-box a.circle-2::before {
@@ -20808,8 +20808,8 @@ footer .main-footer .footer-logo .footer-logo-contain .address li:hover .feather
 }
 
 footer .main-footer .footer-logo .footer-logo-contain .address li .feather {
-    width: 18px;
-    height: 18px;
+    width: 50px;
+    height: 20px;
     stroke: #000
 }
 
@@ -41477,7 +41477,7 @@ body.rtl .menu-label {
     padding: calc(10px + 4*(100vw - 320px)/1600) calc(12px + 8*(100vw - 320px)/1600);
     font-size: 15px;
     min-width: 160px;
-    color: #777
+    color: #000;
 }
 
 .order-table-section .order-navpills {
@@ -47067,3 +47067,18 @@ body.rtl .theme-product-section .right-box-contain .license-list .accordion-item
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* contact us validation css */
+.bordererror {
+    border: 1px solid #ff0000 !important;
+}
+
+.bordererror::-webkit-input-placeholder {
+    color: #ff0000;
+    font-size: 12px;
+}
+
+.bordererror::-moz-placeholder {
+    color: #ff0000;
+    font-size: 12px;
+}

@@ -1,3 +1,26 @@
+
+<?php
+session_start();
+include 'config.php';
+
+// print_r($_SESSION);die;
+
+$login_key = $_SESSION['guesst_login_KEY']; 
+
+// Fetch cart items for the logged-in user
+$query = "SELECT * FROM cart_master WHERE login_key='$login_key'";
+$result = mysqli_query($conn, $query);
+
+$total_cart_items = mysqli_num_rows($result); // Count of items
+$total_cart_value = 0; // Total value of cart
+$cart_items = [];
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $cart_items[] = $row;
+    $total_cart_value += $row['total'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +55,8 @@
     <!-- Iconly css -->
     <link rel="stylesheet" type="text/css" href="assets/css/bulk-style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/animate.css">
+    <script src="assets/js/lordicon.js"></script>
+
    
 
     <!-- Template css -->
@@ -62,7 +87,7 @@
                     <div class="col-xxl-3 d-xxl-block d-none">
                         <div class="top-left-header"><a href="https://maps.google.com/?q=<?=givedata($conn,"company_master","id","1","address")?>" target="_blank">
                             <i class="fa fa-map-marker text-white"></i>
-                            <span class="text-white"><?=givedata($conn,"company_master","id","1","address")?></span></a>
+                            <span class="text-white"><?=givedata($conn,"company_master","id","1","address2")?></span></a>
                         </div>
                     </div>
 
@@ -189,65 +214,66 @@
                                         </a>
                                     </li>
                                     <li class="right-side">
-                                        <div class="onhover-dropdown header-badge">
+                                    <div class="onhover-dropdown header-badge">
                                             <button type="button" class="btn p-0 position-relative header-wishlist">
                                                 <i data-feather="shopping-cart"></i>
-                                                <span class="position-absolute top-0 start-100 translate-middle badge">2
-                                                    <span class="visually-hidden">unread messages</span>
-                                                </span>
+                                               
+                                                <?php if ($total_cart_items > 0): ?>
+                                                    <span class="position-absolute top-0 start-100 translate-middle badge">
+                                                    <span class="cart-count"><?= $total_cart_items; ?></span>
+                                                      </span>
+                                                <?php endif; ?>
+                                              
                                             </button>
 
-                                            <div class="onhover-div">
+                                            <div class="onhover-div" id="cartDetails_DIV">
                                                 <ul class="cart-list">
+                                                <?php
+
+                                                // Fetch cart items for the logged-in user
+
+                                                        $query = "SELECT * FROM cart_master WHERE login_key='$login_key'";
+                                                        // echo "".$query;
+                                                        $result = mysqli_query($conn, $query);
+
+                                                        $total_cart_items = mysqli_num_rows($result); // Count of items
+                                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                           $productkey=$row['product_key'];
+                                                           $img="";
+                                                           if($row['filepath']==""){
+                                                                $img="assets/images/no_image.jpg";
+                                                        }else{
+                                                            $img="ADMIN//".$row['filepath'];
+                                                            
+                                                        }
+                                                        
+                                                
+                                                 ?>
                                                     <li class="product-box-contain">
                                                         <div class="drop-cart">
-                                                            <a href="product-left-thumbnail.html" class="drop-image">
-                                                                <img src="assets/images/vegetable/product/1.png"
-                                                                    class="blur-up lazyload" alt="">
-                                                            </a>
+                                                        <a href="product-details.php?product_key=<?= $row['product_key']; ?>" class="drop-image">
+                                                            <img src="<?=$img?>" class="blur-up lazyload" alt="">
+                                                        </a>
 
-                                                            <div class="drop-contain">
-                                                                <a href="product-left-thumbnail.html">
-                                                                    <h5>Fantasy Crunchy Choco Chip Cookies</h5>
-                                                                </a>
-                                                                <h6><span>1 x</span> £80.58</h6>
-                                                                <button class="close-button close_button">
-                                                                    <i class="fa-solid fa-xmark"></i>
-                                                                </button>
-                                                            </div>
+                                                        <div class="drop-contain">
+                                                            <h5><?=givedata($conn, "products","key_",$productkey,"product_title")?></h5>
+                                                            <h6><span><?= $row['qty']; ?> x</span> £<?= $row['rate']; ?></h6>
+                                                        </div>
                                                         </div>
                                                     </li>
 
-                                                    <li class="product-box-contain">
-                                                        <div class="drop-cart">
-                                                            <a href="product-left-thumbnail.html" class="drop-image">
-                                                                <img src="assets/images/vegetable/product/2.png"
-                                                                    class="blur-up lazyload" alt="">
-                                                            </a>
-
-                                                            <div class="drop-contain">
-                                                                <a href="product-left-thumbnail.html">
-                                                                    <h5>Peanut Butter Bite Premium Butter Cookies 600 g
-                                                                    </h5>
-                                                                </a>
-                                                                <h6><span>1 x</span> £25.68</h6>
-                                                                <button class="close-button close_button">
-                                                                    <i class="fa-solid fa-xmark"></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                <?php } ?>    
                                                 </ul>
 
                                                 <div class="price-box">
-                                                    <h5>Total :</h5>
-                                                    <h4 class="theme-color fw-bold">£106.58</h4>
+                                                <h5>Total :</h5>
+                                                    <h4 class="theme-color fw-bold">£<?= $total_cart_value; ?></h4>
+                                                   
+                                                    
                                                 </div>
-
                                                 <div class="button-group">
-                                                    <a href="CART" class="btn btn-sm cart-button">View Cart</a>
-                                                    <a href="CHECKOUT" class="btn btn-sm cart-button theme-bg-color
-                                                    text-white">Checkout</a>
+                                                    <a href="CHECKOUT/" class="btn btn-sm cart-button theme-bg-color text-white">Checkout</a>
+                                                    <a href="CART/" class="btn btn-sm cart-button">View Cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -306,7 +332,7 @@
                 </div>
             </div>
         </div>
-
+<br>
         <div class="container-fluid-lg" style="border-bottom: 1px solid black;">
             <div class="row">
                 <div class="col-12 position-relative">
@@ -319,158 +345,36 @@
                                 </div>
                                 <div class="offcanvas-body">
                                     <ul class="navbar-nav">
+                                    <?php
+                                            $sql = "SELECT * FROM category where flag='1'";
+                                            $result = mysqli_query($conn, $sql);
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                ?>     
+                                            
                                         <li class="nav-item dropdown dropdown-mega">
                                             <a class="nav-link dropdown-toggle ps-0" href="javascript:void(0)"
-                                                data-bs-toggle="dropdown">HOT FOOD PACKAGING</a>
-
+                                                data-bs-toggle="dropdown" style="text-transform:uppercase"><?=$row['category_title']?></a>
+                                            
                                             <ul class="dropdown-menu">
+                                            <?php
+                                            $sql_ = "SELECT * FROM sub_category where category_id='$row[id]' AND flag='1'";
+                                            $result_ = mysqli_query($conn, $sql_);
+                                            while ($row_ = mysqli_fetch_assoc($result_)) {
+                                               
+                                                ?>
                                                 <li>
-                                                    <a class="dropdown-item" href="#">Takeaway Food Boxes</a>
+                                                    <a class="dropdown-item" href="Product-List/?id_=<?= $row_['key_'] ?>"><?=$row_['sub_category_title']?></a>
                                                 </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Food Trays</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Craft Food Bowls</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Soop & Noodles Container</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Food Pails</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Chip Scoops & Cones</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Pizza & Dessert Boxes</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Category Focus</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Sauces & Portion Ports</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Foil Container</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Plates & Bowls</a>
-                                                </li>
-                                            </ul>
+                                          <?php  }
+                                        ?></ul>
                                         </li>
+                                        <?php  }
+                                        ?>
 
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                                data-bs-toggle="dropdown">COLD FOOD PACKAGING</a>
-
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Salad Boxes</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Salad Bowls</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Platter Boxes</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Food Trays</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Sandwich & Wrap Boxes</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Plastic Deli Containers</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Ice Cream Container</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                                data-bs-toggle="dropdown">DRINKING CUPS</a>
-
-                                                <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Hot Drink Cups</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Smoothie Cups</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Pint & Half Pint Cups</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Shoot Glasses</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Champagne & Wine Glasses</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Shot Glasses</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Water Tumblers & Cones</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Paper Straws & Accessories</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item dropdown dropdown-mega">
-                                            <a class="nav-link dropdown-toggle ps-xl-2 ps-0" href="javascript:void(0)"
-                                                data-bs-toggle="dropdown">BAGS & SHEETS</a>
-
-                                           
-                                                <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Bags & Sheets</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Paper Carrier Bags</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Sandwich Bags</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Open Sided Bags</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Greaseproof Paper Sheets</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Shot Glasses</a>
-                                                </li>
-                                                
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                                data-bs-toggle="dropdown">CUTLERY & NAPKINS</a>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Wooden Cutlery & Others</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Plastic Cutlery</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Napkins</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Greaseproof Paper Sheets</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
+                                 
 
                                         <li class="nav-item ">
-                                            <a class="nav-link" >BRANDED</a>
+                                            <a class="nav-link" href="branded.php" >BRANDED</a>
                                           
                                         </li>
                                        
@@ -514,7 +418,7 @@
             </li>
 
             <li>
-                <a href="WISHLIAST" class="notifi-wishlist">
+                <a href="WISHLIST" class="notifi-wishlist">
                 <i class="fa-solid fa-heart icli"></i>
                     <span>My Wish</span>
                 </a>

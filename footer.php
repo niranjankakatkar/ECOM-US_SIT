@@ -15,16 +15,15 @@
                             <p>At Waves Packaging, we are dedicated to providing high-quality and innovative packaging
                                 solutions</p>
 
-                            <ul class="address">
-                                <li>
-                                    <i data-feather="home"></i>
+                            <ul class="address"  >
+                                <li >
+                                    <i class="fa fa-map-marker"></i>
                                     <a href="https://maps.google.com/?q=<?= givedata($conn, "company_master", "id", "1", "address") ?>"
                                         target="_blank"><?= givedata($conn, "company_master", "id", "1", "address") ?></a>
                                 </li>
                                 <li>
-                                    <i data-feather="mail"></i>
-                                    <a
-                                        href="mailto:<?= givedata($conn, "company_master", "id", "1", "email") ?>"><?= givedata($conn, "company_master", "id", "1", "email") ?></a>
+                                    <i class="fa fa-envelope-o "></i>
+                                    <a href="mailto:<?= givedata($conn, "company_master", "id", "1", "email") ?>"><?= givedata($conn, "company_master", "id", "1", "email") ?></a>
                                 </li>
                             </ul>
                         </div>
@@ -38,24 +37,20 @@
 
                     <div class="footer-contain">
                         <ul>
+                        <?php
+                                
+										   $sql = "SELECT * FROM category where flag='1'";
+										   $result = mysqli_query($conn, $sql);
+										   while($row = mysqli_fetch_assoc($result)) {
+												 
+			                                        ?>
                             <li>
-                                <a href="#" class="text-content">Hot Food Packaging</a>
+                                <a href="Product-List/?id=<?= $row['key_'] ?>" class="text-content"><?=$row['category_title']?></a>
                             </li>
-                            <li>
-                                <a href="#" class="text-content">Cold Food Packaging</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-content">Drinking Cups</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-content">Bags & Sheets</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-content">Cutlery & Nackins</a>
-                            </li>
-                            <!-- <li>
-                                <a href="#" class="text-content">Branded</a>
-                            </li> -->
+                            <?php
+                                           }
+                                           ?>
+                           
                         </ul>
                     </div>
                 </div>
@@ -101,9 +96,9 @@
                             <li>
                                 <a href="terms-of-services.php" class="text-content">Terms & Conditions</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="text-content">FAQ</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -122,6 +117,9 @@
                                         <h6 class="text-content">Hotline 24/7 :</h6>
                                         <h5><a
                                                 href="tel:<?= givedata($conn, "company_master", "id", "1", "contact_no1") ?>"><?= givedata($conn, "company_master", "id", "1", "contact_no1") ?></a>
+                                        </h5>
+                                        <h5><a
+                                                href="tel:<?= givedata($conn, "company_master", "id", "1", "contact_no2") ?>"><?= givedata($conn, "company_master", "id", "1", "contact_no2") ?></a>
                                         </h5>
                                     </div>
                                 </div>
@@ -161,13 +159,13 @@
             </div>
         </div>
 
-        <div class="sub-footer section-small-space pt-0 pb-0">
-            <div class="reserve">
+        <div class="sub-footer section-small-space pt-0 pb-0" >
+            <div class="reserve" >
                 <h6 class="text-content">©2024 Waves Packaging All rights reserved</h6>
             </div>
 
             <div class="payment"
-                style="display: flex; justify-content: center; align-items: center; font-size: 2.5rem; margin-top: 20px;">
+                style="display: flex; justify-content: center; align-items: center; font-size: 2.5rem; margin-top: 10px;">
                 <img src="assets/images/icon/i-2.png" style="width: 70px; height: 70px; object-fit: contain; ">
                 <img src="assets/images/icon/i-1.png" style="width: 70px; height: 70px; object-fit: contain; ">
                 <img src="assets/images/icon/i-3.png" style="width: 70px; height: 70px; object-fit: contain; ">

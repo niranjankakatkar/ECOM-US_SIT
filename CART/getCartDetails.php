@@ -1,61 +1,74 @@
+<?php 
+
+include '../niru_collection.php';
+
+
+   
+echo "__AJAX-";
+$login_key= $_SESSION['guesst_login_KEY'] ;
+$total_cart_items=retrivecount($conn,"cart_master"," where login_key='$login_key'")
+?>
 
 <button type="button" class="btn p-0 position-relative header-wishlist">
-                                                <i data-feather="shopping-cart"></i>
-                                                <span class="position-absolute top-0 start-100 translate-middle badge">2
-                                                    <span class="visually-hidden">unread messages</span>
-                                                </span>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                               
+                                                <?php if ($total_cart_items > 0): ?>
+                                                    <span class="position-absolute top-0 start-100 translate-middle badge">
+                                                    <span class="cart-count"><?= $total_cart_items; ?></span>
+                                                      </span>
+                                                <?php endif; ?>
+                                              
                                             </button>
 
                                             <div class="onhover-div">
                                                 <ul class="cart-list">
+                                                <?php
+
+                                                // Fetch cart items for the logged-in user
+
+                                                        $query = "SELECT * FROM cart_master WHERE login_key='$login_key'";
+                                                        // echo "".$query;
+                                                        $result = mysqli_query($conn, $query);
+
+                                                        $total_cart_items = mysqli_num_rows($result); // Count of items
+                                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                           $productkey=$row['product_key'];
+                                                           $img="";
+                                                           if($row['filepath']==""){
+                                                                $img="../assets/images/no_image.jpg";
+                                                        }else{
+                                                            $img="../ADMIN//".$row['filepath'];
+                                                            
+                                                        }
+                                                        $total_cart_value=$total_cart_value+$row['total'];
+                                                        ?>
+                                                        
+                                                
+                                                
                                                     <li class="product-box-contain">
                                                         <div class="drop-cart">
-                                                            <a href="product-left-thumbnail.html" class="drop-image">
-                                                                <img src="../assets/images/vegetable/product/1.png"
-                                                                    class="blur-up lazyload" alt="">
-                                                            </a>
+                                                        <a href="product-details.php?product_key=<?= $row['product_key']; ?>" class="drop-image">
+                                                            <img src="<?=$img?>" class="blur-up lazyload" alt="">
+                                                        </a>
 
-                                                            <div class="drop-contain">
-                                                                <a href="product-left-thumbnail.html">
-                                                                    <h5>Fantasy Crunchy Choco Chip Cookies</h5>
-                                                                </a>
-                                                                <h6><span>1 x</span> £80.58</h6>
-                                                                <button class="close-button close_button">
-                                                                    <i class="fa-solid fa-xmark"></i>
-                                                                </button>
-                                                            </div>
+                                                        <div class="drop-contain">
+                                                            <h5><?=givedata($conn, "products","key_",$productkey,"product_title")?></h5>
+                                                            <h6><span><?= $row['qty']; ?> x</span> £<?= $row['rate']; ?></h6>
+                                                        </div>
                                                         </div>
                                                     </li>
 
-                                                    <li class="product-box-contain">
-                                                        <div class="drop-cart">
-                                                            <a href="product-left-thumbnail.html" class="drop-image">
-                                                                <img src="../assets/images/vegetable/product/2.png"
-                                                                    class="blur-up lazyload" alt="">
-                                                            </a>
-
-                                                            <div class="drop-contain">
-                                                                <a href="product-left-thumbnail.html">
-                                                                    <h5>Peanut Butter Bite Premium Butter Cookies 600 g
-                                                                    </h5>
-                                                                </a>
-                                                                <h6><span>1 x</span> £25.68</h6>
-                                                                <button class="close-button close_button">
-                                                                    <i class="fa-solid fa-xmark"></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                <?php } ?>    
                                                 </ul>
 
                                                 <div class="price-box">
-                                                    <h5>Total :</h5>
-                                                    <h4 class="theme-color fw-bold">£106.58</h4>
+                                                <h5>Total :</h5>
+                                                    <h4 class="theme-color fw-bold">£<?= $total_cart_value; ?></h4>
+                                                   
+                                                    
                                                 </div>
-
                                                 <div class="button-group">
+                                                    <a href="../CHECKOUT" class="btn btn-sm cart-button theme-bg-color text-white">Checkout</a>
                                                     <a href="../CART" class="btn btn-sm cart-button">View Cart</a>
-                                                    <a href="../CHECKOUT" class="btn btn-sm cart-button theme-bg-color
-                                                    text-white">Checkout</a>
                                                 </div>
                                             </div>

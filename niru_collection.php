@@ -68,6 +68,16 @@ function generateRandomCHAR_INT($length) {
     }
     return $randomString;
 }
+
+function generateRandomINT($length) {
+    $characters = '0123456789';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
 function retrivecount($con,$tabname,$cond)
 {
 /*
@@ -151,7 +161,7 @@ function retriveSUM($con,$tabname,$key,$cond)
 		$Cust_id=retrivemax($con,"customer","Cust_id");
 */
 	$sql = "SELECT SUM($key) as vl FROM $tabname $cond"; 
-	//echo "".$sql;
+	echo "".$sql;
     $result1=mysqli_query($con,$sql);
 	if ($row=mysqli_fetch_object($result1)) 
 	{

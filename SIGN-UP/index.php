@@ -46,32 +46,47 @@
 
                         <div class="input-box">
                             <form class="row g-4" id="formId" onsubmit="return validation();">
-                                <div class="col-12" >
-                                    <div class="form-floating theme-form-floating">
-                                        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name">
-                                        <label for="full_name">Full Name</label>
+                                <div class="col-xxl-12 col-lg-12 col-sm-6" >
+                                    <div class="custom-form">
+                                    <label for="full_name">Full Name</label>
+                                    <div class="custom-input">
+                                        <input type="text" onkeypress="return /[0-9a-zA-Z]/i.test(event.key)" class="form-control" id="full_name" name="full_name" placeholder="Full Name">
+                                     </div>  
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-floating theme-form-floating">
+                                <div class="col-xxl-12 col-lg-12 col-sm-6" >
+                                    <div class="custom-form">
+                                    <label for="email">Email Address</label>
+                                    <div class="custom-input">
                                         <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
-                                        <label for="email">Email Address</label>
+                                        </div>      
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-floating theme-form-floating">
-                                        <input type="email" class="form-control" id="mobile_no" name="mobile_no" placeholder="Email Address">
-                                        <label for="mobile_no">Mobile Number</label>
+                                <div class="col-xxl-12 col-lg-12 col-sm-6">
+                                    <div class="custom-form">
+                                    <label for="mobile_no">Mobile Number</label>
+                                    <div class="custom-input">
+                                        <input type="number" class="form-control" max="10" id="mobile_no" name="mobile_no" placeholder="Mobile Number">
+                                    </div>  
+                                    
                                     </div>
                                 </div>
 
-                                <div class="col-12">
-                                    <div class="form-floating theme-form-floating">
+                                
+                                <div class="col-xxl-12 col-lg-12 col-sm-6">
+                                <div class="custom-form">
+                                    <label for="password" class="form-label">Password</label>
+                                    <div class="custom-input position-relative">
                                         <input type="password" class="form-control" id="password" name="password"
-                                            placeholder="Password">
-                                        <label for="password">Password</label>
+                                            placeholder="Password" required>
+                                        <span
+                                            class="password-toggle position-absolute top-50 end-0 translate-middle-y me-3"
+                                            onclick="togglePassword()">
+                                            <i class="fa fa-eye" id="toggleIcon"></i>
+                                        </span>
                                     </div>
                                 </div>
+                            </div>
 
                                 <div class="col-12">
                                 <label class="form-label fw-semibold">I am a:</label>
@@ -94,13 +109,25 @@
                                         <span>Shopkeeper</span>
                                     </label>
                                 </div>
+
+
+                             
+                                <div class="col-xxl-12 col-lg-12 col-sm-6">
+                                    <div class="custom-form pt-3 pb-1">
+                                    <label for="vat_number">Vat Number</label>
+                                    <div class="custom-input pt-2">
+                                        <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="Vat Number">
+                                    </div>  
+                                    </div>
+                                </div>
+                                
                             </div>
 
                             <div class="col-12">
                                 <div class="forgot-box">
                                     <div class="form-check ps-0 m-0 remember-box">
                                         <input class="checkbox_animated check-box" type="checkbox"
-                                            id="flexCheckDefault">
+                                            id="terms_condi" name="terms_condi">
                                         <label class="form-check-label" for="flexCheckDefault">I agree with
                                             <span style="color: #062d6a;">Terms</span> and <span style="color: #062d6a;">Privacy</span></label>
                                     </div>
@@ -119,23 +146,7 @@
                             <h6>or</h6>
                         </div>
 
-                        <div class="log-in-button">
-                            <ul>
-                                <li>
-                                    <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin"
-                                        class="btn google-button w-100">
-                                        <img src="../assets/images/inner-page/google.png" class="blur-up lazyload"
-                                            alt="">
-                                        Sign up with Google
-                                    </a>
-                                </li>
-                             
-                            </ul>
-                        </div>
-
-                        <div class="other-log-in">
-                            <h6></h6>
-                        </div>
+                        
 
                         <div class="sign-up-box">
                             <h4>Already have an account?</h4>
@@ -163,7 +174,7 @@
                                 <h3 class="text-title">Please enter the one time password to verify your account</h3>
                                 <h5 class="text-content">A code has been sent to mail </h5>
                             </div>
-
+                            <form  id="formId_OTP" >
                             <div id="otp" class="inputs d-flex flex-row justify-content-center">
                                 <input class="text-center form-control rounded" type="text" id="first" maxlength="1"
                                     placeholder="0">
@@ -178,36 +189,65 @@
                                 <input class="text-center form-control rounded" type="text" id="sixth" maxlength="1"
                                     placeholder="0">
                             </div>
-
+                            
                             <div class="send-box pt-4">
                                 <h5>Didn't get the code? <a href="javascript:void(0)" class="theme-color fw-bold">Resend
                                         It</a></h5>
                             </div>
 
-                            <button onclick="location.href = 'index.html';" class="btn btn-animation w-100 mt-3"
+                            <button id="submitButton_OTP" class="btn btn-animation w-100 mt-3"
                                 type="submit">Validate</button>
+
+                                </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <input type="hidden" name="sinup_key" id="sinup_key" value="">
     <!-- log in section end -->
 
     <!-- Footer Section Start -->
     <?php include '../inner_footer.php';?> 
 
     <script>
+
+function togglePassword() {
+            const passwordField = document.getElementById("password");
+            const toggleIcon = document.getElementById("toggleIcon");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text"; // Show the password
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password"; // Hide the password
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+
+        
  function validation(){
+
+            if(document.getElementById("terms_condi").checked==false)
+            {
+
+            alert("Please accepts Terms & Conditions..");
+            }else{
+
             var full_name=$("#full_name").val();
             var email=$("#email").val();
             var mobile_no=$("#mobile_no").val();
             var password=$("#password").val();
+            var vat_number=$("vat_number").val();
 
             $("#full_name").removeClass('bordererror');
             $("#email").removeClass('bordererror');
             $("#mobile_no").removeClass('bordererror');
             $("#password").removeClass('bordererror');
+            $("#vat_number").removeClass('bordererror');
             var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
             if(full_name ==""){
@@ -234,6 +274,14 @@
             $("#mobile_no").attr("placeholder",error);
             return false;
         }
+        if(vat_number ==""){
+            $("#vat_number").focus();
+            error ="Please enter Vat Number";
+            $("#vat_number").val('');
+            $("#vat_number").addClass('bordererror');
+            $("#vat_number").attr("placeholder", error);
+            return false;
+            }
         else if(password ===""){
             $("#password").focus();
             error ="Please enter password";
@@ -243,6 +291,7 @@
             return false;
             }
             return true;
+        }
         }
         
         $(document).ready(function () {
@@ -265,14 +314,15 @@
                         let mydata =  data.split("__AJAX-");
                         var word = ""+mydata[1];
                        let ans = ""+word.localeCompare("Done ");
+                       
                         if (ans == 0) {
-
+                            document.getElementById("sinup_key").value=mydata[2];
                             document.getElementById("reg_div").style.display = "none";
                             document.getElementById("otp_div").style.display = "block";
                           
 
                         }else{
-                            alert("0")
+                            alert("User Already Exist.. ")
                         }
                     },
                     error: function (data) {
@@ -305,6 +355,44 @@
             });
         });
     });
+
+    $(document).ready(function () {
+            $("#submitButton_OTP").click(function (event) {
+                event.preventDefault(); // Prevent default form submission
+             
+               let form = $("#formId_OTP");
+              
+                let url = "signup_form_OTP.php";
+            
+                var key=document.getElementById("sinup_key").value;
+                var otp=document.getElementById("first").value+""+document.getElementById("second").value+""+document.getElementById("third").value+""+document.getElementById("fourth").value+""+document.getElementById("fifth").value+""+document.getElementById("sixth").value;
+                
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {signupkey:key,user_otp:otp}, // Serialize form data
+                    success: function (data) {
+                        console.log('my message' + data);
+                        let mydata =  data.split("__AJAX-");
+                        var word = ""+mydata[1];
+                       let ans = ""+word.localeCompare("Done ");
+                       
+                        if (ans == 0) {
+
+                            window.location.href = '../';
+                          
+
+                        }else{
+                            alert("Error occurred while submitting the form")
+                        }
+                    },
+                    error: function (data) {
+                        alert("Error occurred while submitting the form");
+                    }
+                });
+            });
+        });
+
 
     </script>
 </body>

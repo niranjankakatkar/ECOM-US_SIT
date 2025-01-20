@@ -1,5 +1,10 @@
 <?php include '../niru_collection.php';
 
+if ($_SESSION['guesst_login_KEY'] == "") {
+    $_SESSION['guesst_login_KEY'] = '' . generateRandomString(30);
+}
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	
@@ -38,66 +43,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     <section class="wishlist-section section-b-space">
         <div class="container-fluid-lg">
             <div class="row g-sm-3 g-2">
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
+
+                <?php
+                 $guest_key = $_SESSION['guesst_login_KEY'];
+                 $srid = "";
+                    $sql = "SELECT * FROM wishlist where token_key='$_SESSION[guesst_login_KEY]'";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $srid = "1";
+                ?>
+                   <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
                     <div class="product-box-3 h-100">
                         <div class="product-header">
                             <div class="product-image">
                                 <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/2.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Vegetable</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">Fresh Bread and Pastry Flour 200 g</h5>
-                                </a>
-                                <h6 class="unit mt-1">250 ml</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$08.02</span>
-                                    <del>$15.15</del>
-                                </h5>
-
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/3.png" class="img-fluid blur-up lazyload"
+                                    <img src="../assets/images/cake/product/3.png" class="img-fluid blur-up lazyload"
                                         alt="">
                                 </a>
 
@@ -147,499 +107,29 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                     </div>
                 </div>
 
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/4.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
+                <?php
+                    }
+                    if ($srid == "") {
+                        ?>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80vh; text-align: center;">
+                            <img src="../assets/images/brand/empty-cart.png" class="img-fluid blur-up lazyload"
+                                style="max-width: 200px; width: 100%; height: auto; margin-bottom: 15px;" />
+                            <p style="font-size: 16px; color: #555; margin-bottom: 5px;">Your wishlist is empty!</p>
+                            <p style="font-size: 10px; color: #555; margin-bottom: 5px;">Add items to it now.</p>
+                            <button onclick="window.location.href='../'"
+                                style="padding: 10px 20px; border-radius: 5px; background-color: #062d6a; color: white; border: 1px solid #062d6a; cursor: pointer;">
+                                Shop now
+                            </button>
                         </div>
 
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Snacks</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">SnackAmor Combo Pack of Jowar Stick and Jowar Chips</h5>
-                                </a>
-                                <h6 class="unit mt-1">570 G</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$12.52</span>
-                                    <del>$13.62</del>
-                                </h5>
+                        <?php
+                    }
+                    ?>
+                
 
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+             
 
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/5.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Snacks</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">Yumitos Chilli Sprinkled Potato Chips 100 g</h5>
-                                </a>
-                                <h6 class="unit mt-1">100 G</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$10.25</span>
-                                    <del>$12.36</del>
-                                </h5>
-
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/6.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Vegetable</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">Fantasy Crunchy Choco Chip Cookies</h5>
-                                </a>
-                                <h6 class="unit mt-1">550 G</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$14.25</span>
-                                    <del>$16.57</del>
-                                </h5>
-
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/7.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Vegetable</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">Fresh Bread and Pastry Flour 200 g</h5>
-                                </a>
-                                <h6 class="unit mt-1">1 Kg</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$12.68</span>
-                                    <del>$14.69</del>
-                                </h5>
-
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/2.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Vegetable</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">Fresh Bread and Pastry Flour 200 g</h5>
-                                </a>
-                                <h6 class="unit mt-1">250 ml</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$08.02</span>
-                                    <del>$15.15</del>
-                                </h5>
-
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/3.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Vegetable</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">Peanut Butter Bite Premium Butter Cookies 600 g</h5>
-                                </a>
-                                <h6 class="unit mt-1">350 G</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$04.33</span>
-                                    <del>$10.36</del>
-                                </h5>
-
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/4.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Snacks</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">SnackAmor Combo Pack of Jowar Stick and Jowar Chips</h5>
-                                </a>
-                                <h6 class="unit mt-1">570 G</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$12.52</span>
-                                    <del>$13.62</del>
-                                </h5>
-
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/5.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Snacks</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">Yumitos Chilli Sprinkled Potato Chips 100 g</h5>
-                                </a>
-                                <h6 class="unit mt-1">100 G</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$10.25</span>
-                                    <del>$12.36</del>
-                                </h5>
-
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain">
-                    <div class="product-box-3 h-100">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <a href="product-left-thumbnail.html">
-                                    <img src="assets/images/cake/product/6.png" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </a>
-
-                                <div class="product-header-top">
-                                    <button class="btn wishlist-button close_button">
-                                        <i data-feather="x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-footer">
-                            <div class="product-detail">
-                                <span class="span-name">Vegetable</span>
-                                <a href="product-left-thumbnail.html">
-                                    <h5 class="name">Fantasy Crunchy Choco Chip Cookies</h5>
-                                </a>
-                                <h6 class="unit mt-1">550 G</h6>
-                                <h5 class="price">
-                                    <span class="theme-color">$14.25</span>
-                                    <del>$16.57</del>
-                                </h5>
-
-                                <div class="add-to-cart-box bg-white mt-2">
-                                    <button class="btn btn-add-cart addcart-button">Add
-                                        <span class="add-icon bg-light-gray">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </span>
-                                    </button>
-                                    <div class="cart_qty qty-box">
-                                        <div class="input-group bg-white">
-                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus"
-                                                data-field="">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text"
-                                                name="quantity" value="0">
-                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus"
-                                                data-field="">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -768,7 +258,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                             <li class="list-1">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="assets/images/vegetable/product/10.png" class="blur-up lazyload"
+                                        <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
                                             alt="">
                                     </a>
 
@@ -782,7 +272,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                             <li class="list-2">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="assets/images/vegetable/product/11.png" class="blur-up lazyload"
+                                        <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
                                             alt="">
                                     </a>
 
@@ -796,7 +286,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                             <li class="list-3">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="assets/images/vegetable/product/12.png" class="blur-up lazyload"
+                                        <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
                                             alt="">
                                     </a>
 
@@ -810,7 +300,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                             <li class="list-1">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="assets/images/vegetable/product/13.png" class="blur-up lazyload"
+                                        <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
                                             alt="">
                                     </a>
 

@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $sub_category_id=$_POST['sub_category_id'];
 	$sub_child_category_title=$_POST['sub_child_category_title'];
 	$description=$_POST['description'];
-	$flag="1";
+	$flag=$_POST['flag'];
 	$key_=generateRandomString(20);
 	
 	$image=$_FILES['sub_category_img']['name']; 
@@ -184,11 +184,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 											</div> 
 
 											<div class="form-group row">
-											<label class="col-12 col-form-label">Image <span>( JPEG/PNG )</span></label>
+											  <label class="col-12 col-form-label">Image <span>( JPEG/PNG )</span></label>
 												<div class="col-12">
 													<input type="file" class="form-control" id="sub_category_img" name="sub_category_img" accept="image/png, image/jpeg" placeholder="" required>
 												</div>
 											</div>
+
+
+											<div class="form-group row">
+												<label class="col-12 col-form-label">Status</label>
+												<div class="col-12">
+													<div class="form-check">
+														<input type="radio" id="active" name="flag" value="1" class="radio-button__input">
+														<label for="active" class="form-check-label">Active</label>
+													</div>
+													<div class="form-check">
+														<input type="radio" id="inactive" name="flag" value="0" class="radio-button__input">
+														<label for="inactive" class="form-check-label">Deactive</label>
+													</div>
+												</div>
+										   </div>
 
 											<div class="row">
 												<div class="col-12">

@@ -18,7 +18,7 @@ if($_SESSION['loginID']=="")
             <div id="sidebar" class="sidebar ec-sidebar-footer">
 
                 <div class="ec-brand">
-                    <a href="../Dashboard" title="Ekka">
+                    <a href="../Dashboard" title="Waves Packaging">
                         <img class="" src="../../assets/images/logo/1.png" alt="" />
                        
                     </a>
@@ -71,7 +71,7 @@ if($_SESSION['loginID']=="")
                                     
                                     <li class="">
                                         <a class="sidenav-item-link" href="../OtherUsers/?id=1">
-                                            <span class="nav-text">Wholeseller</span>
+                                            <span class="nav-text">Wholesaler</span>
                                         </a>
                                     </li>
                                     <li class="">
@@ -197,7 +197,7 @@ if($_SESSION['loginID']=="")
 
                         <!-- Reviews -->
                         <li>
-                            <a class="sidenav-item-link" href="#">
+                            <a class="sidenav-item-link" href="../CONTACT-US">
                                 <i class="mdi mdi-star-half"></i>
                                 <span class="nav-text">Contact Us Data</span>
                             </a>

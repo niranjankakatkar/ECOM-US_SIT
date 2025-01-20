@@ -120,20 +120,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 									<div class="ec-cat-form">
 										<h4>Add New Category</h4>
 
-										<form  method="POST" class="form" enctype="multipart/form-data">
+										<form method="POST" class="form needs-validation" enctype="multipart/form-data" novalidate>
                                   
 											<div class="form-group row">
 												<label for="text" class="col-12 col-form-label">Name</label> 
 												<div class="col-12">
 													<input  name="category_title" id="category_title" value="<?=givedata($conn,"category","id",$url_id,"category_title");?>" class="form-control here slug-title" type="text" required >
+													<div class="invalid-feedback">Please provide a valid name.</div>
 												</div>
 											</div>
 
 											<div class="form-group row">
 												<label for="slug" class="col-12 col-form-label">Slug</label> 
 												<div class="col-12">
-													<input id="slug" name="slug" class="form-control here set-slug" type="text">
+													<input id="slug" name="slug" class="form-control here set-slug" type="text" required>
 													<small>The “slug” is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</small>
+													<div class="invalid-feedback">Please provide a valid slug.</div>
 												</div>
 											</div>
 
@@ -155,6 +157,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 												<label class="col-12 col-form-label">Image <span>( JPEG/PNG )</span></label>
 												<div class="col-12">
 													<input type="file" class="form-control" id="category_img" name="category_img" accept="image/png, image/jpeg" placeholder="" required>
+													<div class="invalid-feedback">Please upload a valid image file (JPEG/PNG).</div>
 												</div>
 											</div>
 
@@ -181,7 +184,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 													<th>Name</th>
 													<th>Sub Categories</th>
 													<th>Product</th>
-													<th>Total Sell</th>
+													
 													<th>Status</th>
 													<th>Action</th>
 												</tr>
@@ -202,12 +205,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 													<td><?=$row['category_title']?></td>
 													<td>
 														<span class="ec-sub-cat-list">
-														<span class="ec-sub-cat-count" title="Total Sub Categories">5</span>
+														<span class="ec-sub-cat-count" title="Total Sub Categories"><?=retrivecount($conn,"sub_category"," where category_id='$row[id]'")?></span>
 														
 														</span>
 													</td>
-													<td>28</td>
-													<td>2161</td>
+													<td><?=retrivecount($conn,"products"," where category_id=$row[id]")?></td>
+													
 													<td><?php
 														if($row['flag']==1){
 													?>
@@ -284,6 +287,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	<script src="../assets/plugins/options-sidebar/optionswitcher.js"></script>
 
 	<script src="../assets/js/ekka.js"></script>
+
+
+
+<script>
+  // Custom form validation
+  (function () {
+    const form = document.querySelector(".needs-validation");
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  })();
+</script>
+
 </body>
 
 </html>

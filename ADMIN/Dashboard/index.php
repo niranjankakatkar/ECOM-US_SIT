@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+include '../../niru_collection.php';
+
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8" />
@@ -51,8 +54,8 @@
                         <div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
                             <div class="card card-mini dash-card card-1">
                                 <div class="card-body">
-                                    <h2 class="mb-1">0</h2>
-                                    <p>Daily Signups</p>
+                                    <h2 class="mb-1"><?=retrivecount($conn,"category"," where flag='1'")?></h2>
+                                    <p>Total Catgeory</p>
                                     <span class="mdi mdi-account-arrow-left"></span>
                                 </div>
                             </div>
@@ -60,8 +63,8 @@
                         <div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
                             <div class="card card-mini dash-card card-2">
                                 <div class="card-body">
-                                    <h2 class="mb-1">0</h2>
-                                    <p>Daily Visitors</p>
+                                <h2 class="mb-1"><?=retrivecount($conn,"sub_category"," where flag='1'")?></h2>
+                                <p>Total Sub-Category</p>
                                     <span class="mdi mdi-account-clock"></span>
                                 </div>
                             </div>
@@ -69,8 +72,8 @@
                         <div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
                             <div class="card card-mini dash-card card-3">
                                 <div class="card-body">
-                                    <h2 class="mb-1">0</h2>
-                                    <p>Daily Order</p>
+                                    <h2 class="mb-1"><?=retrivecount($conn,"products"," where flag='1'")?></h2>
+                                    <p>Total Product</p>
                                     <span class="mdi mdi-package-variant"></span>
                                 </div>
                             </div>
@@ -78,8 +81,8 @@
                         <div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
                             <div class="card card-mini dash-card card-4">
                                 <div class="card-body">
-                                    <h2 class="mb-1">$98,503</h2>
-                                    <p>Daily Revenue</p>
+                                    <h2 class="mb-1">0</h2>
+                                    <p>Todays Orders</p>
                                     <span class="mdi mdi-currency-usd"></span>
                                 </div>
                             </div>
@@ -203,142 +206,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-xl-8 col-12 p-b-15">
-                            <!-- World Chart -->
-                            <div class="card card-default" id="analytics-country">
-                                <div class="card-header justify-content-between">
-                                    <h2>Purchased by Country</h2>
-                                    <div class="date-range-report ">
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="card-body vector-map-world-2">
-                                    <div id="regions_purchase" style="height: 100%; width: 100%;"></div>
-                                </div>
-                                <div class="border-top mt-3">
-                                    <div class="row no-gutters">
-                                        <div class="col-lg-6">
-                                            <div class="world-data-chart border-bottom pt-15px pb-15px">
-                                                <canvas id="hbar1" class="chartjs"></canvas>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="world-data-chart pt-15px pb-15px">
-                                                <canvas id="hbar2" class="chartjs"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer d-flex flex-wrap bg-white">
-                                    <a href="#" class="text-uppercase py-3">In-Detail Overview</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-12 p-b-15">
-                            <!-- Top Sell Table -->
-                            <div class="card card-default Sold-card-table">
-                                <div class="card-header justify-content-between">
-                                    <h2>Sold by Items</h2>
-                                    <div class="tools">
-                                        <button class="text-black-50 mr-2 font-size-20"><i
-                                                class="mdi mdi-cached"></i></button>
-                                        <div class="dropdown show d-inline-block widget-dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdown-units" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false" data-display="static"></a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li class="dropdown-item"><a href="#">Action</a></li>
-                                                <li class="dropdown-item"><a href="#">Another action</a></li>
-                                                <li class="dropdown-item"><a href="#">Something else here</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body py-0 compact-units" data-simplebar style="height: 534px;">
-                                    <table class="table ">
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-dark">Backpack</td>
-                                                <td class="text-center">9</td>
-                                                <td class="text-right">33% <i
-                                                        class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">T-Shirt</td>
-                                                <td class="text-center">6</td>
-                                                <td class="text-right">150% <i
-                                                        class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Coat</td>
-                                                <td class="text-center">3</td>
-                                                <td class="text-right">50% <i
-                                                        class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Necklace</td>
-                                                <td class="text-center">7</td>
-                                                <td class="text-right">150% <i
-                                                        class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Jeans Pant</td>
-                                                <td class="text-center">10</td>
-                                                <td class="text-right">300% <i
-                                                        class="mdi mdi-arrow-down-bold text-danger pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Shoes</td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-right">100% <i
-                                                        class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">T-Shirt</td>
-                                                <td class="text-center">6</td>
-                                                <td class="text-right">150% <i
-                                                        class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Watches</td>
-                                                <td class="text-center">18</td>
-                                                <td class="text-right">160% <i
-                                                        class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Inner</td>
-                                                <td class="text-center">156</td>
-                                                <td class="text-right">120% <i
-                                                        class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">T-Shirt</td>
-                                                <td class="text-center">6</td>
-                                                <td class="text-right">150% <i
-                                                        class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                                <div class="card-footer d-flex flex-wrap bg-white">
-                                    <a href="#" class="text-uppercase py-3">View Report</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                 
                     <div class="row">
                         <div class="col-12 p-b-15">
                             <!-- Recent Order Table -->
@@ -511,242 +379,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-xl-5">
-                            <!-- New Customers -->
-                            <div class="card ec-cust-card card-table-border-none card-default">
-                                <div class="card-header justify-content-between ">
-                                    <h2>New Customers</h2>
-                                    <div>
-                                        <button class="text-black-50 mr-2 font-size-20">
-                                            <i class="mdi mdi-cached"></i>
-                                        </button>
-                                        <div class="dropdown show d-inline-block widget-dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdown-customar" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false" data-display="static">
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li class="dropdown-item"><a href="#">Action</a></li>
-                                                <li class="dropdown-item"><a href="#">Another action</a></li>
-                                                <li class="dropdown-item"><a href="#">Something else here</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0 pb-15px">
-                                    <table class="table ">
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="media">
-                                                        <div class="media-image mr-3 rounded-circle">
-                                                            <a href="profile.html"><img
-                                                                    class="profile-img rounded-circle w-45"
-                                                                    src="../assets/img/user/u1.jpg"
-                                                                    alt="customer image"></a>
-                                                        </div>
-                                                        <div class="media-body align-self-center">
-                                                            <a href="profile.html">
-                                                                <h6 class="mt-0 text-dark font-weight-medium">Selena
-                                                                    Wagner</h6>
-                                                            </a>
-                                                            <small>@selena.oi</small>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>2 Orders</td>
-                                                <td class="text-dark d-none d-md-block">$150</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="media">
-                                                        <div class="media-image mr-3 rounded-circle">
-                                                            <a href="profile.html"><img
-                                                                    class="profile-img rounded-circle w-45"
-                                                                    src="../assets/img/user/u2.jpg"
-                                                                    alt="customer image"></a>
-                                                        </div>
-                                                        <div class="media-body align-self-center">
-                                                            <a href="profile.html">
-                                                                <h6 class="mt-0 text-dark font-weight-medium">Walter
-                                                                    Reuter</h6>
-                                                            </a>
-                                                            <small>@walter.me</small>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>5 Orders</td>
-                                                <td class="text-dark d-none d-md-block">$200</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="media">
-                                                        <div class="media-image mr-3 rounded-circle">
-                                                            <a href="profile.html"><img
-                                                                    class="profile-img rounded-circle w-45"
-                                                                    src="../assets/img/user/u3.jpg"
-                                                                    alt="customer image"></a>
-                                                        </div>
-                                                        <div class="media-body align-self-center">
-                                                            <a href="profile.html">
-                                                                <h6 class="mt-0 text-dark font-weight-medium">Larissa
-                                                                    Gebhardt</h6>
-                                                            </a>
-                                                            <small>@larissa.gb</small>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1 Order</td>
-                                                <td class="text-dark d-none d-md-block">$50</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="media">
-                                                        <div class="media-image mr-3 rounded-circle">
-                                                            <a href="profile.html"><img
-                                                                    class="profile-img rounded-circle w-45"
-                                                                    src="../assets/img/user/u4.jpg"
-                                                                    alt="customer image"></a>
-                                                        </div>
-                                                        <div class="media-body align-self-center">
-                                                            <a href="profile.html">
-                                                                <h6 class="mt-0 text-dark font-weight-medium">Albrecht
-                                                                    Straub</h6>
-                                                            </a>
-                                                            <small>@albrech.as</small>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>2 Orders</td>
-                                                <td class="text-dark d-none d-md-block">$100</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="media">
-                                                        <div class="media-image mr-3 rounded-circle">
-                                                            <a href="profile.html"><img
-                                                                    class="profile-img rounded-circle w-45"
-                                                                    src="../assets/img/user/u5.jpg"
-                                                                    alt="customer image"></a>
-                                                        </div>
-                                                        <div class="media-body align-self-center">
-                                                            <a href="profile.html">
-                                                                <h6 class="mt-0 text-dark font-weight-medium">Leopold
-                                                                    Ebert</h6>
-                                                            </a>
-                                                            <small>@leopold.et</small>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1 Order</td>
-                                                <td class="text-dark d-none d-md-block">$60</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="media">
-                                                        <div class="media-image mr-3 rounded-circle">
-                                                            <a href="profile.html"><img
-                                                                    class="profile-img rounded-circle w-45"
-                                                                    src="../assets/img/user/u3.jpg"
-                                                                    alt="customer image"></a>
-                                                        </div>
-                                                        <div class="media-body align-self-center">
-                                                            <a href="profile.html">
-                                                                <h6 class="mt-0 text-dark font-weight-medium">Larissa
-                                                                    Gebhardt</h6>
-                                                            </a>
-                                                            <small>@larissa.gb</small>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1 Order</td>
-                                                <td class="text-dark d-none d-md-block">$50</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-7">
-                            <!-- Top Products -->
-                            <div class="card card-default ec-card-top-prod">
-                                <div class="card-header justify-content-between">
-                                    <h2>Top Products</h2>
-                                    <div>
-                                        <button class="text-black-50 mr-2 font-size-20"><i
-                                                class="mdi mdi-cached"></i></button>
-                                        <div class="dropdown show d-inline-block widget-dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdown-product" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false" data-display="static">
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li class="dropdown-item"><a href="#">Update Data</a></li>
-                                                <li class="dropdown-item"><a href="#">Detailed Log</a></li>
-                                                <li class="dropdown-item"><a href="#">Statistics</a></li>
-                                                <li class="dropdown-item"><a href="#">Clear Data</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body mt-10px mb-10px py-0">
-                                    <div class="row media d-flex pt-15px pb-15px">
-                                        <div class="col-lg-3 col-md-3 col-2 media-image align-self-center rounded">
-                                            <a href="#"><img src="../assets/img/products/p1.jpg" alt="customer image"></a>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-10 media-body align-self-center ec-pos">
-                                            <a href="#">
-                                                <h6 class="mb-10px text-dark font-weight-medium">Baby cotton shoes</h6>
-                                            </a>
-                                            <p class="float-md-right sale"><span class="mr-2">58</span>Sales</p>
-                                            <p class="d-none d-md-block">Statement belting with double-turnlock hardware
-                                                adds “swagger” to a simple.</p>
-                                            <p class="mb-0 ec-price">
-                                                <span class="text-dark">$520</span>
-                                                <del>$580</del>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row media d-flex pt-15px pb-15px">
-                                        <div class="col-lg-3 col-md-3 col-2 media-image align-self-center rounded">
-                                            <a href="#"><img src="../assets/img/products/p2.jpg" alt="customer image"></a>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-10 media-body align-self-center ec-pos">
-                                            <a href="#">
-                                                <h6 class="mb-10px text-dark font-weight-medium">Hoodies for men</h6>
-                                            </a>
-                                            <p class="float-md-right sale"><span class="mr-2">20</span>Sales</p>
-                                            <p class="d-none d-md-block">Statement belting with double-turnlock hardware
-                                                adds “swagger” to a simple.</p>
-                                            <p class="mb-0 ec-price">
-                                                <span class="text-dark">$250</span>
-                                                <del>$300</del>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row media d-flex pt-15px pb-15px">
-                                        <div class="col-lg-3 col-md-3 col-2 media-image align-self-center rounded">
-                                            <a href="#"><img src="../assets/img/products/p3.jpg" alt="customer image"></a>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-10 media-body align-self-center ec-pos">
-                                            <a href="#">
-                                                <h6 class="mb-10px text-dark font-weight-medium">Long slive t-shirt</h6>
-                                            </a>
-                                            <p class="float-md-right sale"><span class="mr-2">10</span>Sales</p>
-                                            <p class="d-none d-md-block">Statement belting with double-turnlock hardware
-                                                adds “swagger” to a simple.</p>
-                                            <p class="mb-0 ec-price">
-                                                <span class="text-dark">$480</span>
-                                                <del>$654</del>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div> <!-- End Content -->
             </div> <!-- End Content Wrapper -->
 

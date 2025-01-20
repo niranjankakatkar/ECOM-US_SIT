@@ -83,21 +83,19 @@
 
                     <div class="footer-contain">
                         <ul>
-                            <li>
-                                <a href="#" class="text-content">Hot Food Packaging</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-content">Cold Food Packaging</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-content">Drinking Cups</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-content">Bags & Sheets</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-content">Cutlery & Nackins</a>
-                            </li>
+                        <?php
+                                
+                                $sql = "SELECT * FROM category where flag='1'";
+                                $result = mysqli_query($conn, $sql);
+                                while($row = mysqli_fetch_assoc($result)) {
+                                      
+                                         ?>
+                 <li>
+                     <a href="../Product-List/?id=<?= $row['key_'] ?>" class="text-content"><?=$row['category_title']?></a>
+                 </li>
+                 <?php
+                                }
+                                ?>
                             <!-- <li>
                                 <a href="#" class="text-content">Branded</a>
                             </li> -->
@@ -145,9 +143,9 @@
                             <li>
                                 <a href="../terms-of-services.php" class="text-content">Terms & Conditions</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="text-content">FAQ</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -159,12 +157,17 @@
 
                     <div class="footer-contact">
                         <ul>
-                            <li>
+                        <li>
                                 <div class="footer-number">
                                     <i data-feather="phone"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Hotline 24/7 :</h6>
-                                        <h5><?=givedata($conn,"company_master","id","1","contact_no1")?></h5>
+                                        <h5><a
+                                                href="tel:<?= givedata($conn, "company_master", "id", "1", "contact_no1") ?>"><?= givedata($conn, "company_master", "id", "1", "contact_no1") ?></a>
+                                        </h5>
+                                        <h5><a
+                                                href="tel:<?= givedata($conn, "company_master", "id", "1", "contact_no2") ?>"><?= givedata($conn, "company_master", "id", "1", "contact_no2") ?></a>
+                                        </h5>
                                     </div>
                                 </div>
                             </li>
@@ -174,11 +177,12 @@
                                     <i data-feather="mail"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Email Address :</h6>
-                                        <h5><?=givedata($conn,"company_master","id","1","email")?></h5>
+                                        <h5><a
+                                                href="mailto:<?= givedata($conn, "company_master", "id", "1", "email") ?>"><?= givedata($conn, "company_master", "id", "1", "email") ?></a>
+                                        </h5>
                                     </div>
                                 </div>
                             </li>
-
                             <!-- <li class="social-app mb-0">
                                 <h5 class="mb-2 text-content">Download App :</h5>
                                 <ul>
@@ -550,14 +554,57 @@
 
 <!-- Tap to top and theme setting button start -->
 <div class="theme-option">
-    
+        <div class="setting-box">
+            <button class="btn setting-button">
+                <i class="fa-solid fa-gear"></i>
+            </button>
 
-    <div class="back-to-top">
-        <a id="back-to-top" href="#">
-            <i class="fas fa-chevron-up"></i>
-        </a>
+            <div class="theme-setting-2">
+                <div class="theme-box">
+                    <ul>
+                        <li>
+                            <div class="setting-name">
+                                <h4>Color</h4>
+                            </div>
+                            <div class="theme-setting-button color-picker">
+                                <form class="form-control">
+                                    <label for="colorPick" class="form-label mb-0">Theme Color</label>
+                                    <input type="color" class="form-control form-control-color" id="colorPick"
+                                        value="#0da487" title="Choose your color">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="setting-name">
+                                <h4>Dark</h4>
+                            </div>
+                            <div class="theme-setting-button">
+                                <button class="btn btn-2 outline" id="darkButton">Dark</button>
+                                <button class="btn btn-2 unline" id="lightButton">Light</button>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="setting-name">
+                                <h4>RTL</h4>
+                            </div>
+                            <div class="theme-setting-button rtl">
+                                <button class="btn btn-2 rtl-unline">LTR</button>
+                                <button class="btn btn-2 rtl-outline">RTL</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-to-top">
+            <a id="back-to-top" href="#">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div>
     </div>
-</div>
 <!-- Tap to top and theme setting button end -->
 
 <!-- Bg overlay Start -->
@@ -598,6 +645,10 @@
 
 <!-- Quantity js -->
 <script src="../assets/js/quantity-2.js"></script>
+<script src="../assets/js/quantity.js"></script>
+
+   <!-- Delivery Option js -->
+   <script src="../assets/js/delivery-option.js"></script>
 
 <!-- WOW js -->
 <script src="../assets/js/wow.min.js"></script>

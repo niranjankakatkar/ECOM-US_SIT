@@ -72,12 +72,13 @@ include '../../niru_collection.php';
 											style="width:100%">
 											<thead>
 												<tr>
-													<th>Product</th>
-													<th>Name</th>
+													
+													<th>Product Name</th>
+													<th>Category</th>
+													<th>Sub Caregory</th>
 													<th>Price</th>
 													<th>Min Qty</th>
 													<th>Status</th>
-													<th>Date</th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -89,13 +90,24 @@ include '../../niru_collection.php';
 										   while($row = mysqli_fetch_assoc($result)) {
 											$timepstamp=$row['timestamp'];
 											$timepstamp=date_create("".$timepstamp);
-			  								 ?>
+											$img = "";
+											if(file_exists($row['filepath'])==1)
+											{
+												$img=$row['filepath'];
+											}
+											else{
+												$img="../../assets/images/no_image.jpg";
+												
+											}
+											 
+											 ?>
 												<tr>
-													<td><img class="tbl-thumb" src="<?=$row['filepath']?>" alt="Product Image" /></td>
-													<td><?=$row['product_title']?></td>
+													<td><img class="tbl-thumb" style="height:100px;width:auto" src="<?=$img?>" alt="Product Image" /><br><?=$row['product_title']?></td>
+													<td><?= givedata($conn, "category", "id", $row['category_id'], "category_title"); ?></td>
+													<td><?= givedata($conn, "sub_category", "id", $row['sub_category_id'], "sub_category_title"); ?></td>
 													<td>Retailer: <?=$row['retail_rate']?><br>
-													Wholseller: <?=$row['wholsell_rate']?><br>
-													Hotelling: <?=$row['hoteling_rate']?><br>
+													Wholesaler: <?=$row['wholsell_rate']?><br>
+													Hoteling: <?=$row['hoteling_rate']?><br>
 													Shop: <?=$row['shop_rate']?><br></td>
 													<td><?=$row['retail_qty']?><br>
 													<?=$row['wholsell_qty']?><br>
@@ -112,7 +124,6 @@ include '../../niru_collection.php';
 														<?php
 														}?></td>
 													
-													<td>2021-10-30</td>
 													<td>
 														<div class="btn-group mb-1">
 															<button type="button"
@@ -125,7 +136,7 @@ include '../../niru_collection.php';
 															</button>
 
 															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="add.php?id=<?=$row['key_']?>">Edit</a>
 																<a class="dropdown-item" href="#">Delete</a>
 															</div>
 														</div>

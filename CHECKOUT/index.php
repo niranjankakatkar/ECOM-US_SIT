@@ -48,11 +48,9 @@ $grandtotal=0;
                             <ul>
                                 <li>
                                     <div class="checkout-icon">
-                                        <lord-icon target=".nav-item" src="https://cdn.lordicon.com/ggihhudh.json"
-                                            trigger="loop-on-hover"
-                                            colors="primary:#121331,secondary:#646e78,tertiary:#0baf9a"
-                                            class="lord-icon">
-                                        </lord-icon>
+                                    <lord-icon target=".nav-item" src="https://cdn.lordicon.com/ggihhudh.json" trigger="loop-on-hover"
+                                     colors="primary:#121331,secondary:#062d6a,tertiary:#062d6a" class="lord-icon">
+                                    </lord-icon>
                                     </div>
                                     <div class="checkout-box">
                                         <div class="checkout-title">
@@ -75,72 +73,32 @@ $grandtotal=0;
 
                                                             <ul class="delivery-address-detail">
                                                                 <li>
-                                                                    <h4 class="fw-500">Jack Jennas</h4>
+                                                                    <h4 class="fw-500"><?=givedata($conn,"user_master","token_key",$_SESSION['tokenID'],"full_name")?></h4>
                                                                 </li>
 
                                                                 <li>
                                                                     <p class="text-content"><span
                                                                             class="text-title">Address
-                                                                            : </span>8424 James Lane South San
-                                                                        Francisco, CA 94080</p>
+                                                                            : </span><?=givedata($conn,"address_master","user_token_id",$_SESSION['tokenID'],"address")?></p>
                                                                 </li>
 
                                                                 <li>
                                                                     <h6 class="text-content"><span
                                                                             class="text-title">Pin Code
-                                                                            :</span> +380</h6>
+                                                                            :</span> <?=givedata($conn,"address_master","user_token_id",$_SESSION['tokenID'],"pincode")?></h6>
                                                                 </li>
 
                                                                 <li>
                                                                     <h6 class="text-content mb-0"><span
                                                                             class="text-title">Phone
-                                                                            :</span> + 380 (0564) 53 - 29 - 68</h6>
+                                                                            :</span> <?=givedata($conn,"user_master","token_key",$_SESSION['tokenID'],"mobile_no")?></h6>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-xxl-6 col-lg-12 col-md-6">
-                                                    <div class="delivery-address-box">
-                                                        <div>
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="radio" name="jack"
-                                                                    id="flexRadioDefault2" checked="checked">
-                                                            </div>
-
-                                                            <div class="label">
-                                                                <label>Office</label>
-                                                            </div>
-
-                                                            <ul class="delivery-address-detail">
-                                                                <li>
-                                                                    <h4 class="fw-500">Jack Jennas</h4>
-                                                                </li>
-
-                                                                <li>
-                                                                    <p class="text-content"><span
-                                                                            class="text-title">Address
-                                                                            :</span>Nakhimovskiy R-N / Lastovaya Ul.,
-                                                                        bld. 5/A, appt. 12
-                                                                    </p>
-                                                                </li>
-
-                                                                <li>
-                                                                    <h6 class="text-content"><span
-                                                                            class="text-title">Pin Code :</span>
-                                                                        +380</h6>
-                                                                </li>
-
-                                                                <li>
-                                                                    <h6 class="text-content mb-0"><span
-                                                                            class="text-title">Phone
-                                                                            :</span> + 380 (0564) 53 - 29 - 68</h6>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -149,7 +107,7 @@ $grandtotal=0;
                                 <li>
                                     <div class="checkout-icon">
                                         <lord-icon target=".nav-item" src="https://cdn.lordicon.com/oaflahpk.json"
-                                            trigger="loop-on-hover" colors="primary:#0baf9a" class="lord-icon">
+                                            trigger="loop-on-hover" colors="primary:#062d6a" class="lord-icon">
                                         </lord-icon>
                                     </div>
                                     <div class="checkout-box">
@@ -233,7 +191,7 @@ $grandtotal=0;
                                 <li>
                                     <div class="checkout-icon">
                                         <lord-icon target=".nav-item" src="https://cdn.lordicon.com/qmcsqnle.json"
-                                            trigger="loop-on-hover" colors="primary:#0baf9a,secondary:#0baf9a"
+                                            trigger="loop-on-hover" colors="primary:#062d6a,secondary:#062d6a"
                                             class="lord-icon">
                                         </lord-icon>
                                     </div>
@@ -622,6 +580,15 @@ $grandtotal=0;
                         </div>
 
                         <button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
+                        <script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
+
+<stripe-buy-button
+  buy-button-id="buy_btn_1QjN6GKSUpY1mQU36495ocmT"
+  publishable-key="pk_test_51QjMjkKSUpY1mQU3ropHpaFYBwGr5cGUwrP4qoAVPZH0WNF86EuK7FYiBUCjAJLYhRWylnbkyMkhKsTnFpWoU51w00Gvjmue7D"
+>
+</stripe-buy-button>
                     </div>
                 </div>
             </div>
