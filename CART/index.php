@@ -60,10 +60,11 @@ $shipping_fee = 0;
                                     $srid = "1";
                                     $subtotal = $subtotal + $row['total'];
                                     $img="";
-                                    if($row['filepath']==""){
+                                    $filepath=givedata($conn, "products", "key_", $product_key, "filepath");
+                                    if($filepath==""){
                                          $img="../assets/images/no_image.jpg";
                                  }else{
-                                     $img="../ADMIN//".$row['filepath'];
+                                     $img="../ADMIN//".$filepath;
                                      
                                  }
                                     ?>

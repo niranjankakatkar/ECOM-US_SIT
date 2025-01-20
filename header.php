@@ -240,10 +240,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                                         while ($row = mysqli_fetch_assoc($result)) {
                                                            $productkey=$row['product_key'];
                                                            $img="";
-                                                           if($row['filepath']==""){
+                                                           $filepath=givedata($conn, "products", "key_", $productkey, "filepath");
+                                                           if($filepath==""){
                                                                 $img="assets/images/no_image.jpg";
                                                         }else{
-                                                            $img="ADMIN//".$row['filepath'];
+                                                            $img="ADMIN//".$filepath;
                                                             
                                                         }
                                                         

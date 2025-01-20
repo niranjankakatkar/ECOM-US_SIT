@@ -34,10 +34,11 @@ $total_cart_items=retrivecount($conn,"cart_master"," where login_key='$login_key
                                                         while ($row = mysqli_fetch_assoc($result)) {
                                                            $productkey=$row['product_key'];
                                                            $img="";
-                                                           if($row['filepath']==""){
+                                                           $filepath=givedata($conn, "products", "key_", $productkey, "filepath");
+                                                           if($filepath==""){
                                                                 $img="../assets/images/no_image.jpg";
                                                         }else{
-                                                            $img="../ADMIN//".$row['filepath'];
+                                                            $img="../ADMIN//".$filepath;
                                                             
                                                         }
                                                         $total_cart_value=$total_cart_value+$row['total'];
